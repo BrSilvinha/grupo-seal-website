@@ -241,7 +241,7 @@ img {
 
 /* HERO SECTION */
 .hero {
-    background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/hero-bg.jpg');
+    background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/Grupo\ Seal\ Logo\ Big.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
