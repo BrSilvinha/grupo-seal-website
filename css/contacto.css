@@ -119,11 +119,11 @@
     padding: 60px 0;
 }
 
-.Heroo {
+.hero {
     padding: 180px 0 100px;
 }
 
-.Heroo h1 {
+.hero h1 {
     font-size: 42px;
     margin-bottom: 20px;
     position: relative;
@@ -131,7 +131,7 @@
     padding-bottom: 15px;
 }
 
-.Heroo h1::after {
+.hero h1::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -141,7 +141,7 @@
     background-color: var(--secondary-color);
 }
 
-.Heroo p {
+.hero p {
     font-size: 18px;
     max-width: 600px;
     margin: 0 auto;

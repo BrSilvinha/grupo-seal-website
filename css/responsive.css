@@ -10,7 +10,7 @@
         padding: 70px 0;
     }
     
-    .Heroo h1 {
+    .hero h1 {
         font-size: 42px;
     }
 }
@@ -54,11 +54,11 @@
         margin: 15px 0;
     }
     
-    .Heroo {
+    .hero {
         padding: 150px 0 80px;
     }
     
-    .Heroo h1 {
+    .hero h1 {
         font-size: 36px;
     }
     
@@ -109,15 +109,15 @@
         font-size: 28px;
     }
     
-    .Heroo {
+    .hero {
         padding: 120px 0 60px;
     }
     
-    .Heroo h1 {
+    .hero h1 {
         font-size: 32px;
     }
     
-    .Heroo p {
+    .hero p {
         font-size: 16px;
     }
     
@@ -155,11 +155,11 @@
         font-size: 24px;
     }
     
-    .Heroo {
+    .hero {
         padding: 100px 0 50px;
     }
     
-    .Heroo h1 {
+    .hero h1 {
         font-size: 28px;
     }
     
@@ -189,7 +189,7 @@
         font-size: 14px;
     }
     
-    .Heroo .btn {
+    .hero .btn {
         margin: 5px;
         display: block;
         width: 100%;

@@ -238,8 +238,8 @@ img {
     cursor: pointer;
     color: var(--primary-color);
 }
-/* Heroo SECTION */
-.Herooo {
+/* hero SECTION */
+.hero {
     background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/GLogo-Menu.png');
     background-size: cover;  /* Mantenemos 'cover' para que ocupe toda la pantalla */
     background-position: center;  /* Centrado */
@@ -253,23 +253,23 @@ img {
     align-items: center;
     justify-content: center;
 }
-.Heroo-content {
+.hero-content {
     max-width: 800px;
     z-index: 2;  /* Asegura que el contenido esté por encima del fondo */
 }
 
-.Heroo h1 {
+.hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
     color: white;
 }
 
-.Heroo p {
+.hero p {
     font-size: 18px;
     margin-bottom: 30px;
 }
 
-.Heroo .btn {
+.hero .btn {
     margin: 0 10px;
 }
 
