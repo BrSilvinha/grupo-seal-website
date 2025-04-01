@@ -242,16 +242,21 @@ img {
 /* HERO SECTION */
 .hero {
     background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/Grupo\ Seal\ Logo\ Big.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background-size: cover;  /* Mantenemos 'cover' para que ocupe toda la pantalla */
+    background-position: center;  /* Centrado */
+    background-attachment: scroll;  /* Cambiado de 'fixed' a 'scroll' para mejor comportamiento */
     color: white;
     text-align: center;
     padding: 200px 0 120px;
+    height: 100vh;  /* Ocupar toda la altura de la ventana */
+    width: 100%;  /* Ocupar todo el ancho */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
 .hero-content {
     max-width: 800px;
+    z-index: 2;  /* Asegura que el contenido esté por encima del fondo */
 }
 
 .hero h1 {
