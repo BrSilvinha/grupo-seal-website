@@ -240,7 +240,7 @@ img {
 }
 /* hero SECTION */
 .hero {
-    background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/GLogo-Menu.png');
+    background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/Logo-Menu.png');
     background-size: cover;  /* Mantenemos 'cover' para que ocupe toda la pantalla */
     background-position: center;  /* Centrado */
     background-attachment: scroll;  /* Cambiado de 'fixed' a 'scroll' para mejor comportamiento */
