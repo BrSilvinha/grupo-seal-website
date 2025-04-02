@@ -241,7 +241,7 @@ img {
 }
 
 .hero {
-    background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/Logo-Menu.png');
+    background-image: linear-gradient(rgba(10, 37, 60, 0.8), rgba(10, 37, 60, 0.8)), url('../assets/images/GrupoSealLogoBig.png');
     background-size: cover;
     background-position: center;
     background-attachment: scroll;
