@@ -7,38 +7,41 @@
     <link rel="stylesheet" href="../css/style-general.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/Equipamiento.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
 </head>
 <body>
     <!-- Header -->
     <header class="header">
-        <div class="header-inner">
-            <div class="logo">
-                <img src="/assets/images/Logo-Menu.png" alt="Logo Grupo SEAL">
-                
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../nosotros/index.html">Nosotros</a></li>
-                    <li><a href="../servicios/index.html">Servicios</a></li>
-                    <li><a href="../personal/index.html">Personal</a></li>
-                    <li><a href="../clientes/index.html">Clientes</a></li>
-                    <li><a href="../contacto/index.html">Contacto</a></li>
-                    <li><a href="../contacto/sucursales.html">Sucursales</a></li>
-                    <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <img src="/assets/images/Logo-Menu.png" alt="Logo Grupo SEAL">
+                </div>
+                <nav>
+                    <ul class="nav-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../nosotros/index.html">Nosotros</a></li>
+                        <li><a href="../servicios/index.html">Servicios</a></li>
+                        <li><a href="../personal/index.html">Personal</a></li>
+                        <li><a href="../clientes/index.html">Clientes</a></li>
+                        <li><a href="../contacto/index.html">Contacto</a></li>
+                        <li><a href="../contacto/sucursales.html">Sucursales</a></li>
+                        <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
+                    </ul>
+                </nav>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container hero-content">
+        <div class="container">
             <div class="hero-content">
                 <h1>Equipamiento</h1>
                 <p>Dotamos a nuestro personal con los equipos y herramientas necesarios para garantizar un servicio de seguridad óptimo y profesional.</p>
@@ -55,7 +58,7 @@
             <div class="row">
                 <div class="col-2">
                     <div class="equipment-image">
-                        <img src="../assets/images/uniforme-azul.jpg" alt="Uniforme Azul">
+                        <img src="../assets/images/UniformeAzul.jpg" alt="Uniforme Azul">
                     </div>
                     <div class="equipment-desc">
                         <h3>Uniforme Azul (Uniforme N° 1)</h3>
@@ -89,13 +92,13 @@
                 </div>
             </div>
             <div class="section-text mt-4">
-                <p>La empresa dota de uniformes nuevos (dos dotaciones al año) a todo nuestro personal, de acuerdo con lo establecido por la SUCAMEC, asegurando que todos nuestros agentes proyecten una imagen profesional y estén adecuadamente identificados.</p>
+                <p class="equipment-note">La empresa dota de uniformes nuevos (dos dotaciones al año) a todo nuestro personal, de acuerdo con lo establecido por la SUCAMEC, asegurando que todos nuestros agentes proyecten una imagen profesional y estén adecuadamente identificados.</p>
             </div>
         </div>
     </section>
 
     <!-- Equipos de Seguridad Section -->
-    <section class="section" style="background-color: #f9f9f9;">
+    <section class="section bg-light">
         <div class="container">
             <div class="section-title">
                 <h2>Equipos de Seguridad</h2>
@@ -163,7 +166,7 @@
             </div>
             <div class="row align-center">
                 <div class="col-2">
-                    <div class="about-image">
+                    <div class="equipment-image">
                         <img src="../assets/images/armamento.jpg" alt="Armamento Reglamentario">
                     </div>
                 </div>
@@ -171,6 +174,7 @@
                     <div class="about-text">
                         <h3>Armas Debidamente Autorizadas</h3>
                         <p>Contamos con licencias de uso de armas emitidas por la SUCAMEC, que nos autorizan para prestar el servicio de vigilancia privada con armas de fuego en el ámbito del departamento de Lambayeque, según Autorización N° 01766-2024-SUCAMEC-GSSP.</p>
+                        
                         <p>Nuestras armas:</p>
                         <ul class="check-list">
                             <li>Están debidamente registradas y autorizadas</li>
@@ -179,6 +183,7 @@
                             <li>Se transportan siguiendo estrictos protocolos de seguridad</li>
                             <li>Son asignadas a agentes con Licencia L4 y experiencia comprobada</li>
                         </ul>
+                        
                         <p class="mt-4">Todo nuestro personal armado cuenta con chalecos anti balas y está capacitado en el manejo de armas cortas y escopetas, cumpliendo con todos los requisitos legales establecidos.</p>
                     </div>
                 </div>
@@ -187,7 +192,7 @@
     </section>
 
     <!-- Legal Section -->
-    <section class="section" style="background-color: #f9f9f9;">
+    <section class="section bg-light">
         <div class="container">
             <div class="section-title">
                 <h2>Respaldo Legal</h2>
@@ -199,12 +204,14 @@
                 <div class="legal-content">
                     <h3>Autorizaciones y Certificaciones</h3>
                     <p>GRUPO SEAL S.A.C. opera bajo la Autorización N° 01766-2024-SUCAMEC-GSSP, otorgada el 30 de Mayo de 2024, que nos autoriza para prestar servicios de vigilancia privada con armas de fuego hasta el 21 de Mayo de 2029.</p>
+                    
                     <p>Cumplimos con todas las normativas establecidas en:</p>
                     <ul class="arrow-list">
                         <li>Ley N° 28879 "Ley Servicios de Seguridad Privada"</li>
                         <li>Decreto Legislativo N° 1213, que regula los servicios de seguridad privada</li>
                         <li>Disposiciones de la Superintendencia de Control de Servicios de Seguridad, Armas, Municiones y Explosivos de uso Civil (SUCAMEC)</li>
                     </ul>
+                    
                     <p class="mt-3">Contamos con una Carta Fianza Nº 1018394, expedida por BANCO DE CRÉDITO, por el monto de cinco (05) UIT, en garantía del fiel cumplimiento de nuestras obligaciones legales.</p>
                 </div>
             </div>
@@ -217,7 +224,7 @@
             <div class="cta-content">
                 <h2>¿Necesita servicios de seguridad confiables?</h2>
                 <p>Contamos con el personal y equipamiento necesario para brindarle la tranquilidad que merece.</p>
-                <a href="../contacto/index.html" class="btn btn-primary mt-4">Contáctenos</a>
+                <a href="../contacto/index.html" class="btn btn-secondary mt-4">Contáctenos</a>
             </div>
         </div>
     </section>
@@ -238,7 +245,7 @@
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="../nosotros/index.html">Nosotros</a></li>
                         <li><a href="../servicios/index.html">Servicios</a></li>
-                        <li><a href="index.html">Personal</a></li>
+                        <li><a href="../personal/index.html">Personal</a></li>
                         <li><a href="../clientes/index.html">Clientes</a></li>
                         <li><a href="../contacto/index.html">Contacto</a></li>
                     </ul>
