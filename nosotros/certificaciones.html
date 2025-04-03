@@ -6,15 +6,105 @@
     <title>Certificaciones - Grupo SEAL S.A.C.</title>
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos adicionales específicos para certificaciones */
+        .certification-details {
+            background-color: rgba(10, 37, 60, 0.05);
+            border-radius: 4px;
+            padding: 20px;
+            margin-top: 15px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .pillar-box .certification-details ul {
+            text-align: left;
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .pillar-box .certification-details ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--white);
+        }
+        
+        .pillar-box .certification-details ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .pillar-box .certification-details ul li strong {
+            font-weight: 600;
+            margin-right: 5px;
+            color: var(--secondary);
+        }
+        
+        .icon-hover {
+            transition: all 0.5s ease;
+        }
+        
+        .icon-hover:hover {
+            animation: pulse 2s infinite ease-in-out;
+        }
+        
+        /* Estilos para el badge de vigencia */
+        .validity-badge {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        /* Efecto de brillo para los certificados */
+        .pillar-box::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.3) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(30deg);
+            transition: all 1.5s ease;
+            opacity: 0;
+        }
+        
+        .pillar-box:hover::after {
+            animation: shine 1.5s ease-in-out;
+        }
+        
+        @keyframes shine {
+            0% {
+                opacity: 0;
+                transform: scale(0) rotate(30deg) translate(-10%, -10%);
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(3) rotate(30deg) translate(20%, 20%);
+            }
+        }
+    </style>
 </head>
 <body>
      <!-- Header -->
      <header class="header">
             <div class="header-inner">
                 <div class="logo">
-                    <img src="/assets/images/Logo-Menu.png" alt="Logo Grupo SEAL">
+                    <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
                     
                 </div>
                 <nav>
@@ -37,11 +127,11 @@
 
     <!-- hero Section -->
     <section id="inicio" class="hero">
-        <div class="container hero-content">
-            <div class="hero-content">
-                <h1>Nuestras Certificaciones</h1>
-                <p>Garantizamos la calidad y legalidad de nuestros servicios con todas las autorizaciones y certificaciones requeridas.</p>
-                <div>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="fade-in-up">Nuestras Certificaciones</h1>
+                <p class="fade-in-up delay-1">Garantizamos la calidad y legalidad de nuestros servicios con todas las autorizaciones y certificaciones requeridas.</p>
+                <div class="fade-in-up delay-2">
                     <a href="#certifications-section" class="btn btn-primary">Conocer más</a>
                     <a href="historia.html" class="btn">Nuestra Historia</a>
                 </div>
@@ -50,15 +140,15 @@
     </section>
 
     <!-- Certifications Section -->
-    <section id="certifications-section" class="section">
+    <section id="certifications-section" class="section pillars-section">
         <div class="container">
             <div class="section-title">
-                <h2>Certificaciones y Autorizaciones</h2>
+                <h2 class="scroll-animation">Certificaciones y Autorizaciones</h2>
             </div>
             
             <div class="pillars-container">
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation-left">
+                    <div class="pillar-icon icon-hover pulse">
                         <i class="fas fa-certificate"></i>
                     </div>
                     <h3>SUCAMEC</h3>
@@ -71,11 +161,14 @@
                                 <li><strong>Ámbito:</strong> Departamento de Lambayeque</li>
                             </ul>
                         </div>
+                        <div class="validity-badge">
+                            <i class="fas fa-check-circle"></i> Vigente
+                        </div>
                     </div>
                 </div>
                 
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation">
+                    <div class="pillar-icon icon-hover pulse">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>Decreto Legislativo N° 1213</h3>
@@ -87,11 +180,14 @@
                                 <li><strong>Reglamento:</strong> Decreto Supremo N° 005-2023-IN</li>
                             </ul>
                         </div>
+                        <div class="validity-badge">
+                            <i class="fas fa-check-circle"></i> Cumplimiento Total
+                        </div>
                     </div>
                 </div>
                 
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation-right">
+                    <div class="pillar-icon icon-hover pulse">
                         <i class="fas fa-file-contract"></i>
                     </div>
                     <h3>Carta Fianza</h3>
@@ -104,6 +200,9 @@
                                 <li><strong>Vigencia:</strong> Hasta Abril de 2029</li>
                             </ul>
                         </div>
+                        <div class="validity-badge">
+                            <i class="fas fa-check-circle"></i> Vigente
+                        </div>
                     </div>
                 </div>
             </div>
@@ -114,26 +213,26 @@
     <section class="section clients-section">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestro Compromiso con la Legalidad</h2>
+                <h2 class="scroll-animation">Nuestro Compromiso con la Legalidad</h2>
             </div>
             
             <div class="about-content">
-                <div class="about-image">
+                <div class="about-image scroll-animation-left">
                     <img src="../assets/images/GrupoSeal.png" alt="Cumplimiento Legal">
                 </div>
-                <div class="about-text">
+                <div class="about-text scroll-animation-right">
                     <p>En GRUPO SEAL S.A.C. no solo cumplimos con todas las normativas y requisitos legales exigidos por SUCAMEC, sino que vamos más allá para garantizar un servicio de excelencia y totalmente transparente.</p>
                     
                     <p>Contamos con un Estudio y Plan de Seguridad actualizado para cada local y modalidad de servicio, cumpliendo con lo establecido en el literal i) del artículo 52 del Reglamento del Decreto Legislativo N° 1213.</p>
                     
                     <p>Nuestro equipo de agentes de seguridad cumple con todos los requisitos establecidos por SUCAMEC, incluyendo licencias actualizadas para el manejo de armas y certificaciones vigentes en sus especialidades.</p>
                     
-                    <div class="service-content">
+                    <div class="service-content scale-up">
                         <ul>
-                            <li>Autorizaciones vigentes</li>
-                            <li>Personal certificado</li>
-                            <li>Planes de seguridad actualizados</li>
-                            <li>Garantías financieras</li>
+                            <li><i class="fas fa-check-circle" style="color: #0a253c; margin-right: 10px;"></i> Autorizaciones vigentes</li>
+                            <li><i class="fas fa-check-circle" style="color: #0a253c; margin-right: 10px;"></i> Personal certificado</li>
+                            <li><i class="fas fa-check-circle" style="color: #0a253c; margin-right: 10px;"></i> Planes de seguridad actualizados</li>
+                            <li><i class="fas fa-check-circle" style="color: #0a253c; margin-right: 10px;"></i> Garantías financieras</li>
                         </ul>
                     </div>
                 </div>
@@ -215,5 +314,48 @@
     <!-- Scripts -->
     <script src="../js/main.js"></script>
     <script src="../js/menu.js"></script>
+    <script>
+        // Función para activar las animaciones al hacer scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mostrar el botón "back to top" al hacer scroll
+            const backToTopButton = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+            
+            // Hacer que el botón "back to top" funcione
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Activar las animaciones al hacer scroll
+            const scrollAnimations = document.querySelectorAll('.scroll-animation, .scroll-animation-left, .scroll-animation-right, .scale-up');
+            
+            const checkScroll = function() {
+                scrollAnimations.forEach(animation => {
+                    const rect = animation.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    if (rect.top <= windowHeight * 0.85) {
+                        animation.classList.add('show');
+                    }
+                });
+            };
+            
+            // Verificar al cargar la página
+            checkScroll();
+            
+            // Verificar al hacer scroll
+            window.addEventListener('scroll', checkScroll);
+        });
+    </script>
 </body>
 </html>

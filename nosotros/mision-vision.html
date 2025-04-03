@@ -6,6 +6,7 @@
     <title>Misión y Visión - Grupo SEAL S.A.C.</title>
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
@@ -14,7 +15,7 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/images/Logo-Menu.png" alt="Logo Grupo SEAL">
+                <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
                 
             </div>
             <nav>
@@ -49,33 +50,59 @@
         </div>
     </section>
 
-    <!-- Mission & Vision Section -->
+<!-- Mission & Vision Section -->
 <section id="mission-vision-section" class="section mission-vision">
     <div class="container">
         <div class="section-title">
-            <h2>Nuestra Misión y Visión</h2>
+            <h2 class="fade-in">Nuestra Misión y Visión</h2>
         </div>
         
-        <div class="mission-vision-container">
-            <div class="mission-box">
-                <div class="pillar-icon icon-hover">
-                    <i class="fas fa-bullseye"></i>
+        <div class="row">
+            <div class="col-2">
+                <div class="service-card fade-in-left scroll-animation">
+                    <div class="service-content text-center">
+                        <div class="pillar-icon pulse">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Misión</h3>
+                        <p>Proteger vidas y propiedades con soluciones integrales de seguridad que generan confianza y seguridad, respaldadas por un equipo comprometido y con gran capacidad.</p>
+                        <div class="cert-icon" style="background-color: var(--secondary); width: 50px; height: 50px; opacity: 0.2;">
+                            <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 24px;"></i>
+                        </div>
+                    </div>
                 </div>
-                <h3>Misión</h3>
-                <p>Proteger vidas y propiedades con soluciones integrales de seguridad que generan confianza y seguridad, respaldadas por un equipo comprometido y con gran capacidad.</p>
             </div>
             
-            <div class="vision-box">
-                <div class="pillar-icon icon-hover">
-                    <i class="fas fa-eye"></i>
+            <div class="col-2">
+                <div class="service-card fade-in-right scroll-animation delay-1">
+                    <div class="service-content text-center">
+                        <div class="pillar-icon pulse">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3>Visión</h3>
+                        <p>Ser una compañía confiable y líder en el amplio campo de la seguridad privada destacada por su solidez, compromiso y un excelente potencial humano.</p>
+                        <div class="cert-icon" style="background-color: var(--secondary); width: 50px; height: 50px; opacity: 0.2;">
+                            <i class="fas fa-rocket" style="color: var(--primary); font-size: 24px;"></i>
+                        </div>
+                    </div>
                 </div>
-                <h3>Visión</h3>
-                <p>Ser una compañía confiable y líder en el amplio campo de la seguridad privada destacada por su solidez, compromiso y un excelente potencial humano.</p>
             </div>
         </div>
+        <!-- Línea divisoria con estilo -->
+        <div class="text-center mt-4">
+            <div style="width: 150px; height: 3px; background-color: var(--primary); margin: 40px auto; position: relative;" class="scale-up scroll-animation">
+                <div style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);"></div>
+            </div>
+        </div>
+        <!-- Añadimos una frase inspiradora -->
+        <div class="cert-box scale-up scroll-animation">
+            <div class="cert-icon">
+                <i class="fas fa-star"></i>
+            </div>
+            <h3>Nuestro Compromiso</h3>
+            <p>En Grupo SEAL S.A.C. estamos dedicados a ofrecer seguridad de primer nivel, adaptada a las necesidades de cada cliente. Nuestra filosofía se basa en la integridad, el profesionalismo y la excelencia en todo lo que hacemos.</p>
+        </div>
     </div>
-</section>
-
 <!-- Pillars Section -->
 <section class="section">
     <div class="container">
