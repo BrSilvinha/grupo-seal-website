@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero h1');
     
     // ----- FUNCIÓN PARA MARCAR ENLACES ACTIVOS -----
+    // Esta función se ha modificado para no cambiar dinámicamente los enlaces activos durante el scroll
     function setActiveNavLinks() {
         const currentLocation = window.location.pathname;
         const navLinks = document.querySelectorAll('.nav-links a');
@@ -109,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ----- MANEJO DEL SCROLL -----
     function setupScrollHandlers() {
-        const isHomePage = setActiveNavLinks();
+        setActiveNavLinks();
         
         window.addEventListener('scroll', function() {
             // Back to top button
@@ -141,34 +142,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Manejo de animaciones al scroll
             handleScrollAnimations();
             
-            // Efecto de resaltado para enlaces del menú según la sección visible
-            if (isHomePage()) {
-                const sections = document.querySelectorAll('section[id]');
-                let current = '';
-                const navLinks = document.querySelectorAll('.nav-links a');
-                
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - 150;
-                    const sectionHeight = section.offsetHeight;
-                    
-                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                        current = section.getAttribute('id');
-                    }
-                });
-                
-                if (current) {
-                    navLinks.forEach(item => {
-                        item.classList.remove('active');
-                        const href = item.getAttribute('href');
-                        
-                        if (href && href.includes(current)) {
-                            item.classList.add('active');
-                        } else if (current === 'inicio' && (href === 'index.html' || href === '../index.html' || href === './')) {
-                            item.classList.add('active');
-                        }
-                    });
-                }
-            }
+            // Se ha eliminado el efecto de resaltado para enlaces del menú según la sección visible
+            // para evitar la animación que indica dónde estás
         });
     }
 
@@ -443,4 +418,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Iniciar todo
     init();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuración del carrusel
+    const slides = document.querySelectorAll('.hero-slide');
+    const transitionTime = 5000; // Tiempo entre transiciones (5 segundos)
+    let currentSlide = 0;
+    
+    // Función para cambiar de slide
+    function nextSlide() {
+        // Quitar clase active de todas las slides
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+        
+        // Incrementar el índice de la slide actual
+        currentSlide = (currentSlide + 1) % slides.length;
+        
+        // Activar la nueva slide
+        slides[currentSlide].classList.add('active');
+    }
+    
+    // Iniciar el carrusel
+    setInterval(nextSlide, transitionTime);
 });

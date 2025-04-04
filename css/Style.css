@@ -227,20 +227,6 @@ p {
 .nav-links a:hover::after {
     width: 100%;
 }
-.nav-links a.active {
-    color: #ffd700; /* Color dorado */
-    font-weight: 700;
-    position: relative;
-}
-.nav-links a.active::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: #ffd700;
-    bottom: -5px;
-    left: 0;
-}
 .menu-toggle {
     display: none;
     cursor: pointer;
@@ -249,15 +235,37 @@ p {
 }
 .hero {
     height: 100vh;
-    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/images/GrupoSealLogoBig.png');
-    background-size: cover;
-    background-position: center;
+    position: relative;
     display: flex;
     align-items: center;
     color: var(--white);
-    position: relative;
     overflow: hidden;
 }
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-slide-1 {
+    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/images/GrupoSealLogoBig.png');
+}
+
+.hero-slide-2 {
+    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/images/GrupoSealLogoBig2.png');
+}
+
 .hero::after {
     content: '';
     position: absolute;
@@ -268,9 +276,10 @@ p {
     background: linear-gradient(to top, rgba(10, 37, 60, 0.8), transparent);
     z-index: 1;
 }
+
 .hero-content {
     max-width: 800px;
-    z-index: 1;
+    z-index: 2;
 }
 .hero h1 {
     margin-bottom: 30px;
