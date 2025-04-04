@@ -259,11 +259,11 @@ p {
 }
 
 .hero-slide-1 {
-    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/images/GrupoSealLogoBig.png');
+    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/img/GrupoSealLogoBig.png');
 }
 
 .hero-slide-2 {
-    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/images/GrupoSealLogoBig2.png');
+    background-image: linear-gradient(rgba(10, 37, 60, 0.6), rgba(10, 37, 60, 0.6)), url('../assets/img/GrupoSealLogoBig2.png');
 }
 
 .hero::after {
