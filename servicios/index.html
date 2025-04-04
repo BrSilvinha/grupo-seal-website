@@ -4,25 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios de Seguridad | Grupo SEAL</title>
-    <link rel="stylesheet" href="../css/Style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
      <!-- Header -->
      <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
-                
+                <img src="../assets/images/Logo-white.png" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../nosotros/index.html">Nosotros</a></li>
-                    <li><a href="../servicios/index.html">Servicios</a></li>
+                    <li><a href="../servicios/index.html" class="active">Servicios</a></li>
                     <li><a href="../personal/index.html">Personal</a></li>
                     <li><a href="../clientes/index.html">Clientes</a></li>
                     <li><a href="../contacto/index.html">Contacto</a></li>
@@ -36,26 +35,26 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container hero-content">
-            <div class="hero-content">
-                <h1>Nuestros Servicios</h1>
-                <p>Soluciones de seguridad integral diseñadas para proteger lo que más importa</p>
-                <a href="../contacto/index.html" class="btn btn-primary">Solicitar Cotización</a>
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="fade-in-up">Nuestros Servicios</h1>
+                <p class="fade-in-up delay-1">Soluciones de seguridad integral diseñadas para proteger lo que más importa</p>
+                <a href="../contacto/index.html" class="btn btn-primary fade-in-up delay-2">Solicitar Cotización</a>
             </div>
         </div>
     </section>
 
     <!-- Servicios Principales -->
-    <section class="section">
+    <section class="section services-section">
         <div class="container">
             <div class="section-title">
-                <h2>Servicios Principales</h2>
+                <h2 class="scroll-animation">Servicios Principales</h2>
             </div>
             <div class="row">
                 <div class="col-2">
-                    <div class="service-card">
+                    <div class="service-card scroll-animation">
                         <div class="service-image">
                             <img src="../assets/images/Vigilancia-Priv.jpg" alt="Vigilancia Privada">
                         </div>
@@ -73,7 +72,7 @@
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="service-card">
+                    <div class="service-card scroll-animation delay-1">
                         <div class="service-image">
                             <img src="../assets/images/Resguardo.jpg" alt="Resguardo Personal">
                         </div>
@@ -95,35 +94,35 @@
     </section>
 
     <!-- Sectores -->
-    <section class="section clients-section">
+    <section class="section pillars-section">
         <div class="container">
             <div class="section-title">
-                <h2>Sectores que atendemos</h2>
+                <h2 class="scroll-animation">Sectores que atendemos</h2>
             </div>
             <div class="pillars-container">
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation-left">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-university"></i>
                     </div>
                     <h3>Sector Bancario</h3>
                     <p>Seguridad especializada para entidades financieras, con protocolos específicos para la gestión de valores y prevención de riesgos en sucursales.</p>
                 </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation delay-1">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <h3>Comercio</h3>
                     <p>Protección para centros comerciales, tiendas y establecimientos, garantizando la seguridad de clientes, personal y mercancía.</p>
                 </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation delay-2">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-building"></i>
                     </div>
                     <h3>Institucional</h3>
                     <p>Servicios adaptados para instituciones públicas y privadas, asegurando el cumplimiento de los protocolos específicos de cada entidad.</p>
                 </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation-right">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-hospital"></i>
                     </div>
                     <h3>Salud</h3>
@@ -131,20 +130,20 @@
                 </div>
             </div>
             <div class="text-center mt-4">
-                <a href="sectores.html" class="btn btn-primary">Explorar todos los sectores</a>
+                <a href="sectores.html" class="btn btn-secondary scroll-animation">Explorar todos los sectores</a>
             </div>
         </div>
     </section>
 
     <!-- Por qué elegirnos -->
-    <section class="section">
+    <section class="section certifications-section">
         <div class="container">
             <div class="section-title">
-                <h2>¿Por qué elegir nuestros servicios?</h2>
+                <h2 class="scroll-animation">¿Por qué elegir nuestros servicios?</h2>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="cert-box">
+                    <div class="cert-box scale-up">
                         <div class="cert-icon">
                             <i class="fas fa-medal"></i>
                         </div>
@@ -153,7 +152,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="cert-box">
+                    <div class="cert-box scale-up delay-1">
                         <div class="cert-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
@@ -162,7 +161,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="cert-box">
+                    <div class="cert-box scale-up delay-2">
                         <div class="cert-icon">
                             <i class="fas fa-user-tie"></i>
                         </div>
@@ -178,11 +177,11 @@
     <section class="section" style="background-color: #f9f9f9;">
         <div class="container">
             <div class="section-title">
-                <h2>Solicite una cotización personalizada</h2>
+                <h2 class="scroll-animation">Solicite una cotización personalizada</h2>
             </div>
             <div class="text-center">
-                <p>En Grupo SEAL entendemos que cada cliente tiene necesidades específicas de seguridad. Nuestro equipo está listo para diseñar una solución a medida para su empresa o institución.</p>
-                <a href="../contacto/index.html" class="btn btn-secondary mt-4">Contáctenos hoy</a>
+                <p class="scroll-animation delay-1">En Grupo SEAL entendemos que cada cliente tiene necesidades específicas de seguridad. Nuestro equipo está listo para diseñar una solución a medida para su empresa o institución.</p>
+                <a href="../contacto/index.html" class="btn btn-primary mt-4 scroll-animation delay-2">Contáctenos hoy</a>
             </div>
         </div>
     </section>
@@ -259,6 +258,5 @@
     </a>
 
     <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
 </body>
 </html>

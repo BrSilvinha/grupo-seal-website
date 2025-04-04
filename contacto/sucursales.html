@@ -15,8 +15,7 @@
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
-                
+                <img src="../assets/images/Logo-white.png" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -26,7 +25,7 @@
                     <li><a href="../personal/index.html">Personal</a></li>
                     <li><a href="../clientes/index.html">Clientes</a></li>
                     <li><a href="../contacto/index.html">Contacto</a></li>
-                    <li><a href="../contacto/sucursales.html">Sucursales</a></li>
+                    <li><a href="../contacto/sucursales.html" class="active">Sucursales</a></li>
                     <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
                 </ul>
             </nav>
@@ -36,32 +35,33 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container hero-content">
+        <div class="container">
             <div class="hero-content">
                 <h1>Nuestras Sucursales</h1>
                 <p>Presencia estratégica para brindar un servicio integral en diferentes regiones del país.</p>
+                <a href="#locations" class="btn btn-secondary">Conoce nuestras oficinas</a>
             </div>
         </div>
     </section>
 
     <!-- Locations Section -->
-    <section class="section">
+    <section id="locations" class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="text-center">
                 <h2>Presencia Nacional</h2>
+                <p>En Grupo SEAL S.A.C. contamos con presencia en diversas regiones del Perú, lo que nos permite brindar un servicio más eficiente y personalizado a nuestros clientes a nivel nacional.</p>
             </div>
-            <p class="text-center">En Grupo SEAL S.A.C. contamos con presencia en diversas regiones del Perú, lo que nos permite brindar un servicio más eficiente y personalizado a nuestros clientes a nivel nacional.</p>
             
-            <div class="locations-grid">
+            <div class="locations-grid scroll-reveal">
                 <!-- Sede Principal -->
-                <div class="location-card">
-                    <div class="location-header">
-                        <h3>Sede Principal - Lambayeque</h3>
-                        <span class="location-badge">Oficina Central</span>
-                    </div>
-                    <div class="location-content">
+                <div class="location-card service-card">
+                    <div class="service-content">
+                        <div class="location-header">
+                            <h3>Sede Principal - Lambayeque</h3>
+                            <span class="location-badge">Oficina Central</span>
+                        </div>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -83,12 +83,12 @@
                 </div>
                 
                 <!-- Sede Lima -->
-                <div class="location-card">
-                    <div class="location-header">
-                        <h3>Sede Lima</h3>
-                        <span class="location-badge">Oficina Regional</span>
-                    </div>
-                    <div class="location-content">
+                <div class="location-card service-card">
+                    <div class="service-content">
+                        <div class="location-header">
+                            <h3>Sede Lima</h3>
+                            <span class="location-badge">Oficina Regional</span>
+                        </div>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -110,12 +110,12 @@
                 </div>
                 
                 <!-- Sede Piura -->
-                <div class="location-card">
-                    <div class="location-header">
-                        <h3>Sede Piura</h3>
-                        <span class="location-badge">Oficina Regional</span>
-                    </div>
-                    <div class="location-content">
+                <div class="location-card service-card">
+                    <div class="service-content">
+                        <div class="location-header">
+                            <h3>Sede Piura</h3>
+                            <span class="location-badge">Oficina Regional</span>
+                        </div>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -137,12 +137,12 @@
                 </div>
                 
                 <!-- Sede Tumbes -->
-                <div class="location-card">
-                    <div class="location-header">
-                        <h3>Sede Tumbes</h3>
-                        <span class="location-badge">Oficina Regional</span>
-                    </div>
-                    <div class="location-content">
+                <div class="location-card service-card">
+                    <div class="service-content">
+                        <div class="location-header">
+                            <h3>Sede Tumbes</h3>
+                            <span class="location-badge">Oficina Regional</span>
+                        </div>
                         <div class="location-info">
                             <div class="location-info-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -164,37 +164,54 @@
                 </div>
             </div>
             
-            <div class="coverage-info mt-4">
+            <div class="cert-box scroll-reveal mt-4">
+                <div class="cert-icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                </div>
                 <h3 class="text-center">Cobertura Nacional</h3>
                 <p class="text-center">Además de nuestras oficinas principales, brindamos cobertura en las siguientes regiones:</p>
-                <div class="regions-grid">
-                    <div class="region-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Amazonas</span>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Amazonas</h3>
                     </div>
-                    <div class="region-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Cajamarca</span>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Cajamarca</h3>
                     </div>
-                    <div class="region-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>San Martín</span>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>San Martín</h3>
                     </div>
-                    <div class="region-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Ancash</span>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Ancash</h3>
                     </div>
-                    <div class="region-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>La Libertad</span>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>La Libertad</h3>
                     </div>
-                    <div class="region-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Barranco (Lima)</span>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <h3>Barranco (Lima)</h3>
                     </div>
                 </div>
+                
                 <div class="text-center mt-4">
-                    <a href="index.html" class="btn btn-primary">Contáctanos para más información</a>
+                    <a href="../contacto/index.html" class="btn btn-primary">Contáctanos para más información</a>
                 </div>
             </div>
         </div>
@@ -218,7 +235,7 @@
                         <li><a href="../servicios/index.html">Servicios</a></li>
                         <li><a href="../personal/index.html">Personal</a></li>
                         <li><a href="../clientes/index.html">Clientes</a></li>
-                        <li><a href="index.html">Contacto</a></li>
+                        <li><a href="../contacto/index.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -258,6 +275,7 @@
             </div>
         </div>
     </footer>
+    
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
@@ -265,6 +283,28 @@
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
+    <script>
+        // Script for scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+            
+            const revealOnScroll = function() {
+                scrollRevealElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('show');
+                    }
+                });
+            };
+            
+            // Initial check on page load
+            revealOnScroll();
+            
+            // Check on scroll
+            window.addEventListener('scroll', revealOnScroll);
+        });
+    </script>
 </body>
 </html>

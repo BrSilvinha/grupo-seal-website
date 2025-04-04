@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+ 
 </head>
 <body>
     <!-- Header -->
@@ -16,13 +17,12 @@
         <div class="header-inner">
             <div class="logo">
                 <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
-                
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../nosotros/index.html">Nosotros</a></li>
-                    <li><a href="../servicios/index.html">Servicios</a></li>
+                    <li><a href="../servicios/index.html" class="active">Servicios</a></li>
                     <li><a href="../personal/index.html">Personal</a></li>
                     <li><a href="../clientes/index.html">Clientes</a></li>
                     <li><a href="../contacto/index.html">Contacto</a></li>
@@ -39,10 +39,10 @@
     <!-- hero Section -->
     <section id="inicio" class="hero">
         <div class="container hero-content">
-            <div class="hero-content">
-                <h1>Sectores Especializados</h1>
-                <p>Soluciones de seguridad adaptadas a las necesidades específicas de cada industria</p>
-                <a href="../contacto/index.html" class="btn btn-primary">Solicitar Cotización</a>
+            <div class="hero-content fade-in">
+                <h1 class="fade-in-up">Sectores Especializados</h1>
+                <p class="fade-in-up delay-1">Soluciones de seguridad adaptadas a las necesidades específicas de cada industria</p>
+                <a href="../contacto/index.html" class="btn btn-primary fade-in-up delay-2">Solicitar Cotización</a>
             </div>
         </div>
     </section>
@@ -50,14 +50,14 @@
     <!-- Sectores Principales -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title scroll-reveal">
                 <h2>Sectores que atendemos</h2>
                 <p>En Grupo SEAL entendemos que cada sector tiene necesidades únicas de seguridad. Por ello, ofrecemos soluciones especializadas para diversos sectores industriales y comerciales.</p>
             </div>
             
             <!-- Sector Bancario -->
-            <div class="sector-box">
-                <div class="sector-icon">
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon pulse">
                     <i class="fas fa-university"></i>
                 </div>
                 <div class="sector-content">
@@ -74,8 +74,8 @@
             </div>
             
             <!-- Sector Comercial -->
-            <div class="sector-box">
-                <div class="sector-icon">
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon pulse">
                     <i class="fas fa-shopping-cart"></i>
                 </div>
                 <div class="sector-content">
@@ -83,7 +83,7 @@
                     <p>Protección integral para centros comerciales, tiendas y establecimientos, garantizando la seguridad de clientes, personal y mercancía.</p>
                     <ul>
                         <li>Control de accesos y vigilancia en estacionamientos</li>
-                        <li>SIStemas de prevención contra robos y hurtos</li>
+                        <li>Sistemas de prevención contra robos y hurtos</li>
                         <li>Protocolos de actuación en emergencias y evacuaciones</li>
                         <li>Monitoreo discreto en áreas de alto valor</li>
                         <li>Personal capacitado en atención al cliente y gestión de conflictos</li>
@@ -92,8 +92,8 @@
             </div>
             
             <!-- Sector Institucional -->
-            <div class="sector-box">
-                <div class="sector-icon">
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon pulse">
                     <i class="fas fa-building"></i>
                 </div>
                 <div class="sector-content">
@@ -110,8 +110,8 @@
             </div>
             
             <!-- Sector Salud -->
-            <div class="sector-box">
-                <div class="sector-icon">
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon pulse">
                     <i class="fas fa-hospital"></i>
                 </div>
                 <div class="sector-content">
@@ -121,15 +121,15 @@
                         <li>Control de acceso a áreas restringidas y salas especiales</li>
                         <li>Gestión de visitantes en horarios establecidos</li>
                         <li>Protección de equipos e insumos médicos de alto valor</li>
-                        <li>Personal capacitado en primeros auxilios y aSIStencia en emergencias</li>
+                        <li>Personal capacitado en primeros auxilios y asistencia en emergencias</li>
                         <li>Vigilancia discreta que respeta la privacidad de los pacientes</li>
                     </ul>
                 </div>
             </div>
             
             <!-- Sector Educativo -->
-            <div class="sector-box">
-                <div class="sector-icon">
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon pulse">
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div class="sector-content">
@@ -139,15 +139,15 @@
                         <li>Control de ingreso y salida de estudiantes y visitantes</li>
                         <li>Vigilancia en campus y áreas comunes</li>
                         <li>Protocolos específicos para la protección de menores</li>
-                        <li>Prevención y manejo de situaciones de criSIS</li>
+                        <li>Prevención y manejo de situaciones de crisis</li>
                         <li>Capacitación a la comunidad educativa en medidas de seguridad</li>
                     </ul>
                 </div>
             </div>
             
             <!-- Sector Construcción -->
-            <div class="sector-box">
-                <div class="sector-icon">
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon pulse">
                     <i class="fas fa-hard-hat"></i>
                 </div>
                 <div class="sector-content">
@@ -168,12 +168,12 @@
     <!-- Ventajas -->
     <section class="section" style="background-color: #f9f9f9;">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title scroll-reveal">
                 <h2>¿Por qué elegir nuestros servicios especializados?</h2>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="benefit-box">
+                    <div class="benefit-box scroll-reveal">
                         <div class="benefit-icon">
                             <i class="fas fa-cogs"></i>
                         </div>
@@ -182,7 +182,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="benefit-box">
+                    <div class="benefit-box scroll-reveal">
                         <div class="benefit-icon">
                             <i class="fas fa-user-tie"></i>
                         </div>
@@ -191,7 +191,7 @@
                     </div>
                 </div>
                 <div class="col">
-                    <div class="benefit-box">
+                    <div class="benefit-box scroll-reveal">
                         <div class="benefit-icon">
                             <i class="fas fa-clipboard-check"></i>
                         </div>
@@ -206,10 +206,10 @@
     <!-- Contáctanos -->
     <section class="section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title scroll-reveal">
                 <h2>Solicite una evaluación especializada</h2>
             </div>
-            <div class="text-center">
+            <div class="text-center scroll-reveal">
                 <p>Nuestro equipo de especialistas puede realizar una evaluación de riesgos adaptada a su sector, identificando vulnerabilidades y proponiendo soluciones efectivas.</p>
                 <a href="../contacto/index.html" class="btn btn-secondary mt-4">Solicitar evaluación</a>
             </div>
@@ -288,6 +288,6 @@
     </a>
 
     <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
+
 </body>
 </html>

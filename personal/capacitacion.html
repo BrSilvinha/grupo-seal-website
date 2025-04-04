@@ -9,14 +9,28 @@
     <link rel="stylesheet" href="../css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Estilos adicionales para los logos */
+        .service-logo {
+            font-size: 60px;
+            color: #003366;
+            text-align: center;
+            margin: 20px 0;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
      <!-- Header -->
      <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
-                
+                <img src="../assets/images/Logo-white.png" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -36,60 +50,62 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container hero-content">
+        <div class="container">
             <div class="hero-content">
                 <h1>Programas de Capacitación</h1>
                 <p>El pilar de nuestra excelencia es la formación constante y rigurosa que recibe nuestro personal de seguridad.</p>
+                <a href="#entrenamiento" class="btn btn-secondary">Conoce Nuestro Entrenamiento</a>
             </div>
         </div>
     </section>
 
-<!-- Training Overview Section -->
-<section class="section">
-    <div class="container">
-        <div class="section-title scroll-animation">
-            <h2>Nuestro Plan de Entrenamiento</h2>
-        </div>
-        <div class="about-content">
-            <div class="about-image scroll-animation-left">
-                <img src="../assets/images/Capacitacion.jpg" alt="Capacitación">
+    <!-- Training Overview Section -->
+    <section id="entrenamiento" class="section about-section">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>Nuestro Plan de Entrenamiento</h2>
             </div>
-            <div class="about-text scroll-animation-right">
-                <h3>Formación Integral</h3>
-                <p>En GRUPO SEAL S.A.C. consideramos que la capacitación constante es fundamental para garantizar un servicio de excelencia. Todo nuestro personal pasa por un riguroso plan de entrenamiento que incluye:</p>
-                <ul class="check-list">
-                    <li>Cursos certificados por SUCAMEC</li>
-                    <li>Capacitación en procedimientos operativos estándar</li>
-                    <li>Entrenamiento en protocolos de seguridad</li>
-                    <li>Técnicas de observación y detección de riesgos</li>
-                    <li>Manejo de criSIS y situaciones de emergencia</li>
-                    <li>Atención al cliente y comunicación efectiva</li>
-                </ul>
-                <p>Cada agente de seguridad debe aprobar evaluaciones teóricas y prácticas antes de incorporarse a nuestro equipo de trabajo.</p>
+            <div class="about-content">
+                <div class="about-image scroll-reveal">
+                    <img src="../assets/images/Capacitacion.jpg" alt="Capacitación">
+                </div>
+                <div class="about-text scroll-reveal">
+                    <h3>Formación Integral</h3>
+                    <p>En GRUPO SEAL S.A.C. consideramos que la capacitación constante es fundamental para garantizar un servicio de excelencia. Todo nuestro personal pasa por un riguroso plan de entrenamiento que incluye:</p>
+                    <ul class="sector-content">
+                        <li>Cursos certificados por SUCAMEC</li>
+                        <li>Capacitación en procedimientos operativos estándar</li>
+                        <li>Entrenamiento en protocolos de seguridad</li>
+                        <li>Técnicas de observación y detección de riesgos</li>
+                        <li>Manejo de crisis y situaciones de emergencia</li>
+                        <li>Atención al cliente y comunicación efectiva</li>
+                    </ul>
+                    <p>Cada agente de seguridad debe aprobar evaluaciones teóricas y prácticas antes de incorporarse a nuestro equipo de trabajo.</p>
+                    <a href="#programas" class="btn">Ver Programas Especializados</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Training Programs Section -->
-    <section class="section" style="background-color: #f9f9f9;">
+    <section id="programas" class="section services-section" style="background-color: #f9f9f9;">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title scroll-reveal">
                 <h2>Programas Especializados</h2>
+                <p class="text-center">Capacitaciones específicas para garantizar un servicio integral y eficiente en todos los escenarios.</p>
             </div>
-            <div class="row">
-                <div class="col">
+            <div class="row scroll-reveal">
+                <div class="col-2">
                     <div class="service-card">
-                        <div class="service-image">
-                            <img src="../assets/images/PrimerosAux.jpg" alt="Primeros Auxilios">
+                        <div class="service-logo">
+                            <i class="fas fa-heartbeat"></i>
                         </div>
                         <div class="service-content">
                             <h3>Primeros Auxilios</h3>
                             <p>Capacitación integral en técnicas de primeros auxilios para responder adecuadamente en situaciones de emergencia médica.</p>
-                            <ul>
+                            <ul class="sector-content">
                                 <li>RCP básico y avanzado</li>
                                 <li>Atención de heridas y traumatismos</li>
                                 <li>Manejo de hemorragias</li>
@@ -99,15 +115,15 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+                <div class="col-2">
                     <div class="service-card">
-                        <div class="service-image">
-                            <img src="../assets/images/Defenza Personal.jpg" alt="Defensa Personal">
+                        <div class="service-logo">
+                            <i class="fas fa-user-shield"></i>
                         </div>
                         <div class="service-content">
                             <h3>Defensa Personal</h3>
                             <p>Entrenamiento en técnicas de defensa personal para garantizar la seguridad propia y de las personas protegidas.</p>
-                            <ul>
+                            <ul class="sector-content">
                                 <li>Técnicas de control y reducción</li>
                                 <li>Manejo de situaciones de riesgo</li>
                                 <li>Desarme de agresores</li>
@@ -117,15 +133,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
+            </div>
+            <div class="row scroll-reveal">
+                <div class="col-2">
                     <div class="service-card">
-                        <div class="service-image">
-                            <img src="../assets/images/ControlInsendios.jpg" alt="Control de Incendios">
+                        <div class="service-logo">
+                            <i class="fas fa-fire-extinguisher"></i>
                         </div>
                         <div class="service-content">
                             <h3>Control de Incendios</h3>
                             <p>Capacitación en prevención y control de incendios, asegurando una respuesta rápida y eficaz.</p>
-                            <ul>
+                            <ul class="sector-content">
                                 <li>Tipos de fuego y agentes extintores</li>
                                 <li>Uso correcto de extintores</li>
                                 <li>Evacuación y control de multitudes</li>
@@ -135,33 +153,52 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-2">
+                    <div class="service-card">
+                        <div class="service-logo">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Seguridad Especializada</h3>
+                            <p>Formación en protocolos avanzados de seguridad adaptados a diferentes escenarios y necesidades.</p>
+                            <ul class="sector-content">
+                                <li>Seguridad para eventos masivos</li>
+                                <li>Protección de instalaciones críticas</li>
+                                <li>Vigilancia electrónica</li>
+                                <li>Manejo de amenazas específicas</li>
+                                <li>Protección VIP y ejecutiva</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Certifications Section -->
-    <section class="section">
+    <section class="section pillars-section">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title scroll-reveal">
                 <h2>Certificaciones y Formación Continua</h2>
+                <p class="text-center">Garantizamos personal altamente calificado con las mejores certificaciones del sector.</p>
             </div>
-            <div class="pillars-container">
+            <div class="pillars-container scroll-reveal">
                 <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                    <div class="pillar-icon">
                         <i class="fas fa-certificate"></i>
                     </div>
                     <h3>Certificación SUCAMEC</h3>
                     <p>Todos nuestros agentes cuentan con certificación vigente de la Superintendencia Nacional de Control de Servicios de Seguridad, Armas, Municiones y Explosivos de Uso Civil.</p>
                 </div>
                 <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                    <div class="pillar-icon">
                         <i class="fas fa-sync-alt"></i>
                     </div>
                     <h3>Actualización Permanente</h3>
                     <p>Nuestro personal recibe capacitación continua para mantenerse al día con las últimas técnicas y normativas en seguridad privada.</p>
                 </div>
                 <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                    <div class="pillar-icon">
                         <i class="fas fa-user-shield"></i>
                     </div>
                     <h3>Especialización por Sector</h3>
@@ -172,15 +209,16 @@
     </section>
 
     <!-- Development Philosophy Section -->
-    <section class="section" style="background-color: #f9f9f9;">
+    <section class="section mission-vision">
         <div class="container">
-            <div class="section-title">
+            <div class="section-title scroll-reveal">
                 <h2>Filosofía de Desarrollo</h2>
+                <p class="text-center">Formamos profesionales íntegros preparados para la seguridad moderna.</p>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="cert-box">
-                        <div class="cert-icon">
+            <div class="achievements-grid scroll-reveal">
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="pillar-icon">
                             <i class="fas fa-user"></i>
                         </div>
                         <h3>Como Persona</h3>
@@ -188,25 +226,86 @@
                         <p>Creemos que un buen agente de seguridad debe ser primero una persona íntegra y con principios sólidos.</p>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="cert-box">
-                        <div class="cert-icon">
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="pillar-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
                         <h3>Como Vigilante</h3>
-                        <p>Desarrollamos habilidades técnicas y profesionales específicas del ámbito de la seguridad, con énfaSIS en la observación, prevención y respuesta.</p>
+                        <p>Desarrollamos habilidades técnicas y profesionales específicas del ámbito de la seguridad, con énfasis en la observación, prevención y respuesta.</p>
                         <p>Nuestros agentes están capacitados para anticipar situaciones de riesgo y actuar de forma proactiva.</p>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="cert-box">
-                        <div class="cert-icon">
+                <div class="service-card">
+                    <div class="service-content">
+                        <div class="pillar-icon">
                             <i class="fas fa-city"></i>
                         </div>
                         <h3>Como Ciudadano</h3>
                         <p>Incentivamos la conciencia cívica y el compromiso con la comunidad, entendiendo que la seguridad es un bien común que beneficia a toda la sociedad.</p>
                         <p>Fomentamos el respeto a las leyes y la colaboración con las autoridades competentes.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title scroll-reveal">
+                <h2>Proceso de Formación</h2>
+                <p class="text-center">Un recorrido estructurado para garantizar la excelencia en cada uno de nuestros agentes.</p>
+            </div>
+            <div class="timeline scroll-reveal">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Fase 1</div>
+                    <div class="timeline-content">
+                        <h3>Selección Rigurosa</h3>
+                        <p>Proceso de evaluación integral que incluye verificación de antecedentes, evaluaciones psicológicas y entrevistas personalizadas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Fase 2</div>
+                    <div class="timeline-content">
+                        <h3>Formación Básica</h3>
+                        <p>Capacitación inicial en fundamentos de seguridad, marco legal, procedimientos operativos y protocolos de emergencia.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Fase 3</div>
+                    <div class="timeline-content">
+                        <h3>Especialización</h3>
+                        <p>Entrenamiento específico según el sector al que será asignado el agente, con enfoque en los riesgos particulares de cada industria.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Fase 4</div>
+                    <div class="timeline-content">
+                        <h3>Formación Continua</h3>
+                        <p>Programa de capacitación permanente con actualizaciones periódicas, simulacros y talleres de perfeccionamiento.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section text-center">
+        <div class="container">
+            <div class="cert-box scroll-reveal">
+                <div class="cert-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3>¿Necesitas un Equipo de Seguridad Altamente Capacitado?</h3>
+                <p>En Grupo SEAL contamos con personal entrenado y certificado para brindar soluciones de seguridad adaptadas a tus necesidades específicas.</p>
+                <div class="mt-4">
+                    <a href="../contacto/index.html" class="btn btn-primary">Solicitar Información</a>
+                    <a href="../contacto/trabaja.html" class="btn" style="margin-left: 15px;">Únete a Nuestro Equipo</a>
                 </div>
             </div>
         </div>
@@ -239,6 +338,7 @@
                         <li><a href="../servicios/vigilancia.html">Vigilancia Privada</a></li>
                         <li><a href="../servicios/resguardo.html">Resguardo Personal</a></li>
                         <li><a href="../servicios/sectores.html">Servicios por Sectores</a></li>
+                        <li><a href="capacitacion.html">Capacitación</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">

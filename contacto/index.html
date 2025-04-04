@@ -7,54 +7,54 @@
     <link rel="stylesheet" href="../css/Style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/animations.css">
-    <link rel="stylesheet" href="../css/contacto.css"> <!-- Nuevo archivo CSS -->
+    <link rel="stylesheet" href="../css/contacto.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-   <!-- Header -->
-   <header class="header">
-    <div class="header-inner">
-        <div class="logo">
-            <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
-            
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="../assets/images/Logo-white.png" alt="Logo Grupo SEAL">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../nosotros/index.html">Nosotros</a></li>
+                    <li><a href="../servicios/index.html">Servicios</a></li>
+                    <li><a href="../personal/index.html">Personal</a></li>
+                    <li><a href="../clientes/index.html">Clientes</a></li>
+                    <li><a href="../contacto/index.html" class="active">Contacto</a></li>
+                    <li><a href="../contacto/sucursales.html">Sucursales</a></li>
+                    <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
         </div>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="../index.html">Inicio</a></li>
-                <li><a href="../nosotros/index.html">Nosotros</a></li>
-                <li><a href="../servicios/index.html">Servicios</a></li>
-                <li><a href="../personal/index.html">Personal</a></li>
-                <li><a href="../clientes/index.html">Clientes</a></li>
-                <li><a href="../contacto/index.html">Contacto</a></li>
-                <li><a href="../contacto/sucursales.html">Sucursales</a></li>
-                <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
-            </ul>
-        </nav>
-        <div class="menu-toggle">
-            <i class="fas fa-bars"></i>
-        </div>
-    </div>
-</header>
+    </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container hero-content">
-            <div class="hero-content">
+        <div class="container">
+            <div class="hero-content scroll-reveal">
                 <h1>Contáctanos</h1>
                 <p>Estamos listos para brindarte la mejor asesoría en soluciones de seguridad para tu empresa o negocio.</p>
+                <a href="#contact-info" class="btn btn-secondary">Más Información</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="section">
+    <section id="contact-info" class="section">
         <div class="container">
             <div class="section-title">
                 <h2>Información de Contacto</h2>
             </div>
             <div class="row">
-                <div class="col">
+                <div class="col-2 scroll-reveal">
                     <div class="contact-info">
                         <div class="contact-info-item">
                             <div class="contact-icon">
@@ -96,17 +96,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="contact-alert">
-                        <h3>Contáctanos directamente</h3>
-                        <p>Para consultas o solicitudes de servicios, por favor comunícate con nosotros a través de los siguientes medios:</p>
-                        <ul class="contact-methods">
-                            <li><i class="fas fa-phone-alt"></i> Llámanos: 962 339 890 - 962 339 494</li>
-                            <li><i class="fas fa-envelope"></i> Escríbenos: Administracion@gruposealsac.com</li>
-                            <li><i class="fas fa-building"></i> Visítanos en nuestra oficina principal en el horario indicado</li>
-                        </ul>
-                        <div class="contact-cta">
-                            <p>Estamos comprometidos en brindarte el mejor servicio y responderemos a tu consulta lo más pronto posible.</p>
+                <div class="col-2 scroll-reveal">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Contáctanos directamente</h3>
+                            <p>Para consultas o solicitudes de servicios, por favor comunícate con nosotros a través de los siguientes medios:</p>
+                            <ul class="footer-links">
+                                <li><a href="tel:962339890"><i class="fas fa-phone-alt"></i> Llámanos: 962 339 890 - 962 339 494</a></li>
+                                <li><a href="mailto:Administracion@gruposealsac.com"><i class="fas fa-envelope"></i> Escríbenos: Administracion@gruposealsac.com</a></li>
+                                <li><a href="#map"><i class="fas fa-building"></i> Visítanos en nuestra oficina principal</a></li>
+                            </ul>
+                            <div class="contact-cta mt-4">
+                                <p>Estamos comprometidos en brindarte el mejor servicio y responderemos a tu consulta lo más pronto posible.</p>
+                                <a href="tel:962339890" class="btn btn-primary">Llamar Ahora</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -115,12 +118,12 @@
     </section>
 
     <!-- Map Section -->
-    <section class="section bg-light" style="padding-top: 0;">
+    <section id="map" class="section bg-light" style="padding-top: 0;">
         <div class="container">
             <div class="section-title">
                 <h2>Ubicación</h2>
             </div>
-            <div class="map-container">
+            <div class="map-container scroll-reveal">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.492868557275!2d-79.73445452412828!3d-6.15357996177307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904ced2e0b60b9ad%3A0x7edd93e2e65cbef2!2sCarretera%20Fernando%20Belaunde%20Terry%2C%20Motupe%2014013%2C%20Per%C3%BA!5e0!3m2!1ses-419!2sus!4v1711952271456!5m2!1ses-419!2sus" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -192,7 +195,5 @@
 
     <!-- Scripts -->
     <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
-    <script src="../js/scroll-animation.js"></script>
 </body>
 </html>

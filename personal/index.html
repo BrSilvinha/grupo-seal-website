@@ -11,19 +11,18 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-     <!-- Header -->
-     <header class="header">
+    <!-- Header -->
+    <header class="header">
         <div class="header-inner">
             <div class="logo">
                 <img src="/assets/images/Logo-white.png" alt="Logo Grupo SEAL">
-                
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
                     <li><a href="../nosotros/index.html">Nosotros</a></li>
                     <li><a href="../servicios/index.html">Servicios</a></li>
-                    <li><a href="../personal/index.html">Personal</a></li>
+                    <li><a href="../personal/index.html" class="active">Personal</a></li>
                     <li><a href="../clientes/index.html">Clientes</a></li>
                     <li><a href="../contacto/index.html">Contacto</a></li>
                     <li><a href="../contacto/sucursales.html">Sucursales</a></li>
@@ -36,45 +35,51 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="container hero-content">
-            <div class="hero-content">
+            <div class="hero-content fade-in-up">
                 <h1>Nuestro Personal</h1>
-                <p>Contamos con un equipo de profesionales ex-integrantes de las fuerzas armadas y asesores de la PNP, especialistas en seguridad y protección.</p>
+                <p class="fade-in-up delay-1">Contamos con un equipo de élite formado por profesionales ex-integrantes de las fuerzas armadas y asesores de la PNP, especialistas en seguridad y protección con amplios años de experiencia.</p>
+                <div class="fade-in-up delay-2">
+                    <a href="#equipo" class="btn btn-primary">Conocer nuestro equipo</a>
+                    <a href="../contacto/trabaja.html" class="btn btn-secondary">Trabaja con nosotros</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Personal Overview Section -->
-    <section class="section">
+    <section id="equipo" class="section scroll-animation">
         <div class="container">
             <div class="section-title">
                 <h2>Equipo de Excelencia</h2>
             </div>
             <div class="row">
-                <div class="col-2">
+                <div class="col-2 scroll-animation-left">
                     <div class="about-image">
                         <img src="../assets/images/NuestroEquipo.jpg" alt="Nuestro Equipo">
                     </div>
                 </div>
-                <div class="col-2">
+                <div class="col-2 scroll-animation-right">
                     <div class="about-text">
                         <h3>Perfil de Nuestros Agentes</h3>
-                        <p>En GRUPO SEAL S.A.C nos aseguramos de contar con personal altamente calificado para garantizar un servicio de máxima calidad y confianza.</p>
-                        <p>Nuestros agentes de seguridad cumplen con los siguientes requisitos:</p>
+                        <p>En GRUPO SEAL S.A.C nos enorgullecemos de contar con personal altamente calificado para garantizar un servicio de máxima calidad y confianza en todo momento.</p>
+                        <p>Nuestros agentes de seguridad cumplen con rigurosos requisitos:</p>
                         <ul class="check-list">
-                            <li>Ser peruano de nacimiento</li>
-                            <li>Licenciados de las FF.AA. y FF.PP con experiencia en seguridad</li>
-                            <li>Estatura mínima: 1.70 mts</li>
-                            <li>Secundaria completa, acreditada con certificado de estudios</li>
-                            <li>Experiencia mínima de dos años en vigilancia (comprobada)</li>
-                            <li>Certificaciones de antecedentes policiales y judiciales</li>
-                            <li>Curso vigente SUCAMEC y Licencia L4</li>
-                            <li>Capacitación en funciones de seguridad, primeros auxilios y más</li>
+                            <li><i class="fas fa-shield-alt"></i> Ser peruano de nacimiento</li>
+                            <li><i class="fas fa-user-shield"></i> Licenciados de las FF.AA. y FF.PP con amplia experiencia</li>
+                            <li><i class="fas fa-ruler-vertical"></i> Estatura mínima: 1.70 mts</li>
+                            <li><i class="fas fa-graduation-cap"></i> Secundaria completa, acreditada con certificado de estudios</li>
+                            <li><i class="fas fa-history"></i> Experiencia mínima de dos años en vigilancia (comprobada)</li>
+                            <li><i class="fas fa-file-alt"></i> Certificaciones de antecedentes policiales y judiciales</li>
+                            <li><i class="fas fa-certificate"></i> Curso vigente SUCAMEC y Licencia L4</li>
+                            <li><i class="fas fa-first-aid"></i> Capacitación continua en seguridad y primeros auxilios</li>
                         </ul>
-                        <a href="capacitacion.html" class="btn btn-primary mt-4">Ver Capacitación</a>
-                        <a href="equipamiento.html" class="btn mt-4">Ver Equipamiento</a>
+                        <div class="btn-group mt-4">
+                            <a href="capacitacion.html" class="btn btn-primary">Ver Capacitación</a>
+                            <a href="equipamiento.html" class="btn">Ver Equipamiento</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -85,66 +90,156 @@
     <section class="section" style="background-color: #f9f9f9;">
         <div class="container">
             <div class="section-title">
-                <h2>Desarrollo Personal</h2>
+                <h2>Desarrollo Profesional</h2>
+                <p class="text-center scroll-animation">Formamos a nuestro personal en tres dimensiones fundamentales para garantizar un servicio integral y de excelencia.</p>
             </div>
             <div class="pillars-container">
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation delay-1">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-brain"></i>
                     </div>
                     <h3>Nivel Cognoscitivo</h3>
-                    <p>Nuestros agentes son capacitados para modificar su forma de pensar, desarrollando una mentalidad estratégica y preventiva en todo momento.</p>
+                    <p>Nuestros agentes son capacitados para desarrollar una mentalidad estratégica y preventiva, mejorando constantemente su capacidad de análisis y toma de decisiones bajo presión.</p>
+                    <a href="capacitacion.html#cognitivo" class="btn">Más información</a>
                 </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation delay-2">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-running"></i>
                     </div>
-                    <h3>Nivel Sicomotor</h3>
-                    <p>Entrenamos a nuestro personal para que modifique su forma de hacer las cosas, optimizando procedimientos y acciones en situaciones de riesgo.</p>
+                    <h3>Nivel Psicomotor</h3>
+                    <p>Entrenamos a nuestro personal para optimizar sus procedimientos y acciones en situaciones de riesgo, con prácticas regulares de respuesta rápida y precisa.</p>
+                    <a href="capacitacion.html#psicomotor" class="btn">Más información</a>
                 </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon icon-hover">
+                <div class="pillar-box scroll-animation delay-3">
+                    <div class="pillar-icon pulse">
                         <i class="fas fa-heart"></i>
                     </div>
                     <h3>Nivel Afectivo</h3>
-                    <p>Desarrollamos en nuestro equipo una forma de proceder basada en los valores fundamentales de la empresa, creando un sentido de responsabilidad y compromiso.</p>
+                    <p>Desarrollamos en nuestro equipo un proceder basado en los valores fundamentales de la empresa, fomentando la responsabilidad, lealtad y compromiso con cada cliente.</p>
+                    <a href="capacitacion.html#afectivo" class="btn">Más información</a>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <a href="capacitacion.html" class="btn btn-primary">Conocer más sobre nuestra capacitación</a>
+            <div class="text-center mt-4 scale-up">
+                <p>Nuestro programa de capacitación es continuo y actualizado según las últimas tendencias en seguridad</p>
+                <a href="capacitacion.html" class="btn btn-primary">Conocer nuestro programa completo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section class="section scroll-animation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Logros de Nuestro Equipo</h2>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card scroll-animation delay-1">
+                    <div class="achievement-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>+10,000</h3>
+                    <p>Horas de capacitación anual a nuestro personal</p>
+                </div>
+                <div class="achievement-card scroll-animation delay-2">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>+350</h3>
+                    <p>Agentes de seguridad activos</p>
+                </div>
+                <div class="achievement-card scroll-animation delay-3">
+                    <div class="achievement-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>+80</h3>
+                    <p>Empresas protegidas en todo el país</p>
+                </div>
+                <div class="achievement-card scroll-animation delay-4">
+                    <div class="achievement-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>98%</h3>
+                    <p>Índice de satisfacción de nuestros clientes</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Leadership Team Section -->
-    <section class="section">
+    <section class="section" style="background-color: #f9f9f9;">
         <div class="container">
             <div class="section-title">
-                <h2>Nuestros Líderes</h2>
+                <h2>Dirección Ejecutiva</h2>
+                <p class="text-center scroll-animation">Nuestro equipo directivo combina experiencia militar y empresarial para ofrecer el mejor servicio de seguridad.</p>
             </div>
             <div class="row">
-                <div class="col-2">
-                    <div class="leader-card">
-                        <div class="leader-image">
-                          <img src="../assets/images/Ines.jpg" alt="Anggelly Briggith Santacruz Chacon">
+                <div class="col-2 scroll-animation-left">
+                    <div class="service-card leader-card">
+                        <div class="service-image leader-image">
+                            <img src="../assets/images/Ines.jpg" alt="Anggelly Briggith Santacruz Chacon">
                         </div>
-                        <div class="leader-info">
-                            <h3>Anggelly Briggith Santacruz Chacon</h3>
-                            <p class="leader-position">Gerente General</p>
+                        <div class="service-content leader-info">
+                            <h3>Dra. Ines Chacon Alvarado</h3>
+                            <p class="leader-position"><i class="fas fa-briefcase"></i> Gerente General</p>
+                            <p>Profesional con amplia experiencia en dirección de empresas de seguridad y gestión estratégica de operaciones a nivel nacional.</p>
+                            <ul class="leader-credentials">
+                                <li><i class="fas fa-check-circle"></i> MBA en Administración de Empresas</li>
+                                <li><i class="fas fa-check-circle"></i> Especialista en Gestión de Seguridad</li>
+                                <li><i class="fas fa-check-circle"></i> +15 años de experiencia en el sector</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-2">
-                    <div class="leader-card">
-                        <div class="leader-image">
+                <div class="col-2 scroll-animation-right">
+                    <div class="service-card leader-card">
+                        <div class="service-image leader-image">
                             <img src="../assets/images/Nelson.jpg" alt="Jefe de Operaciones">
                         </div>
-                        <div class="leader-info">
-                            <h3>Jefe de Operaciones</h3>
+                        <div class="service-content leader-info">
+                            <h3>Dr. Nelson Santacruz Jara</h3>
+                            <p class="leader-position"><i class="fas fa-shield-alt"></i> Director de Operaciones</p>
+                            <p>Ex-oficial de las Fuerzas Armadas con especialización en seguridad y planificación estratégica.</p>
+                            <ul class="leader-credentials">
+                                <li><i class="fas fa-check-circle"></i> Licenciado de las FF.AA. con honores</li>
+                                <li><i class="fas fa-check-circle"></i> Especialista en manejo de crisis</li>
+                                <li><i class="fas fa-check-circle"></i> Certificaciones internacionales en seguridad</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="text-center mt-4 scale-up">
+                <a href="../nosotros/equipo.html" class="btn btn-primary">Conocer a todo nuestro equipo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section scroll-animation">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que dicen de nuestro equipo</h2>
+            </div>
+            <div class="cert-box">
+                <div class="cert-icon">
+                    <i class="fas fa-quote-right"></i>
+                </div>
+                <p>"El equipo de seguridad de Grupo SEAL ha demostrado un nivel de profesionalismo y compromiso excepcional. Su formación militar y constante capacitación se refleja en cada aspecto de su servicio. Nos sentimos completamente seguros con ellos."</p>
+                <h3>Jorge Ramírez</h3>
+                <p class="testimonial-position">Gerente de Operaciones - Agroindustrias del Norte</p>
+            </div>
+            <div class="text-center mt-4">
+                <a href="../clientes/testimonios.html" class="btn">Ver más testimonios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background-color: var(--primary); color: var(--white);">
+        <div class="container text-center scale-up">
+            <h2 style="color: var(--white);">¿Buscas unirte a nuestro equipo?</h2>
+            <p style="color: var(--white); max-width: 700px; margin: 0 auto 30px;">Si eres ex-miembro de las FF.AA. o FF.PP. y buscas desarrollarte profesionalmente en una empresa líder en seguridad, Grupo SEAL te está buscando.</p>
+            <a href="../contacto/trabaja.html" class="btn btn-secondary">Postula ahora</a>
         </div>
     </section>
 
@@ -157,6 +252,11 @@
                         <img src="../assets/images/Logo-white.png" alt="Grupo SEAL">
                     </div>
                     <p>Empresa peruana con formación militar comprometida a proteger lo que más importa. Desde hace +12 años brindamos soluciones confiables para garantizar la tranquilidad de nuestros clientes.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="footer-column">
                     <h4>Enlaces Rápidos</h4>
@@ -215,9 +315,7 @@
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
-
     <!-- Scripts -->
     <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
 </body>
 </html>

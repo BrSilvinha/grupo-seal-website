@@ -1,0 +1,228 @@
+/* Estilos para las secciones de equipamiento */
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.equipment-item {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    border-top: 3px solid transparent;
+}
+
+.equipment-item:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+    border-top: 3px solid var(--primary);
+}
+
+.equipment-icon {
+    width: 70px;
+    height: 70px;
+    background-color: rgba(10, 37, 60, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.equipment-item:hover .equipment-icon {
+    background-color: var(--primary);
+}
+
+.equipment-icon i {
+    font-size: 28px;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.equipment-item:hover .equipment-icon i {
+    color: var(--white);
+}
+
+.equipment-desc {
+    margin-top: 25px;
+}
+
+.equipment-image {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 300px;
+}
+
+.equipment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.equipment-image:hover img {
+    transform: scale(1.05);
+}
+
+.equipment-note {
+    font-style: italic;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(10, 37, 60, 0.03);
+    border-left: 3px solid var(--primary);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+/* Listas con íconos */
+.check-list, .arrow-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.check-list li, .arrow-list li {
+    padding: 8px 0 8px 30px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.check-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+}
+
+.arrow-list li::before {
+    content: '\f054';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-size: 12px;
+}
+
+.check-list li:hover, .arrow-list li:hover {
+    padding-left: 35px;
+}
+
+/* Sección Legal */
+.legal-box {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    display: flex;
+    gap: 30px;
+    transition: var(--transition);
+}
+
+.legal-box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-strong);
+}
+
+.legal-icon {
+    width: 80px;
+    height: 80px;
+    min-width: 80px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.legal-icon i {
+    font-size: 36px;
+    color: var(--white);
+}
+
+.legal-content {
+    flex: 1;
+}
+
+/* CTA Section */
+.cta-section {
+    background-image: linear-gradient(rgba(10, 37, 60, 0.85), rgba(10, 37, 60, 0.85)), url('../assets/images/cta-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 0;
+    text-align: center;
+    color: var(--white);
+}
+
+.cta-content h2 {
+    color: var(--white);
+}
+
+.cta-content p {
+    color: var(--secondary);
+    max-width: 700px;
+    margin: 0 auto 20px;
+    text-align: center;
+}
+
+/* Alineación vertical del contenido */
+.align-center {
+    align-items: center;
+}
+
+/* Animaciones para scroll-reveal */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.scroll-reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Fondo claro */
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+/* Media queries para responsividad */
+@media (max-width: 992px) {
+    .row {
+        flex-direction: column;
+    }
+    
+    .legal-box {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .legal-content h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 768px) {
+    .equipment-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .equipment-image {
+        height: 250px;
+    }
+}

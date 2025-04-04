@@ -1,92 +1,96 @@
-// Animaciones de desplazamiento
+// Archivo main.js optimizado
 document.addEventListener('DOMContentLoaded', function() {
-    // Marcar enlace activo según la URL actual
-    const currentLocation = window.location.pathname;
-    const navLinks = document.querySelectorAll('.nav-links a');
+    // ----- VARIABLES GLOBALES -----
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinksMenu = document.querySelector('.nav-links');
+    const backToTopButton = document.getElementById('backToTop');
+    const header = document.querySelector('.header');
+    const hero = document.querySelector('.hero');
+    const heroTitle = document.querySelector('.hero h1');
+    
+    // ----- FUNCIÓN PARA MARCAR ENLACES ACTIVOS -----
+    function setActiveNavLinks() {
+        const currentLocation = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-links a');
 
-    // Eliminar la clase active de todos los enlaces
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-    });
-
-    // Función para verificar si estamos en la página principal
-    const isHomePage = () => {
-        return currentLocation === '/' || 
-               currentLocation.endsWith('/index.html') || 
-               currentLocation.endsWith('/');
-    };
-
-    // Para la página principal
-    if (isHomePage()) {
+        // Eliminar la clase active de todos los enlaces
         navLinks.forEach(link => {
-            if (link.getAttribute('href') === 'index.html' || 
-                link.getAttribute('href') === '../index.html' || 
-                link.getAttribute('href') === './') {
-                link.classList.add('active');
-            }
+            link.classList.remove('active');
         });
-    } else {
-        // Para páginas en subdirectorios
-        navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href');
-            if (currentLocation.includes(linkPath) && linkPath !== '../index.html') {
-                link.classList.add('active');
-            }
-        });
-        
-        // Marcar como activo el enlace principal cuando estamos en una subpágina
-        const pathSegments = currentLocation.split('/');
-        if (pathSegments.length > 2) {
-            const currentSection = pathSegments[1]; // por ejemplo "servicios" en "/servicios/vigilancia.html"
-            
+
+        // Función para verificar si estamos en la página principal
+        const isHomePage = () => {
+            return currentLocation === '/' || 
+                currentLocation.endsWith('/index.html') || 
+                currentLocation.endsWith('/');
+        };
+
+        // Para la página principal
+        if (isHomePage()) {
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === 'index.html' || 
+                    link.getAttribute('href') === '../index.html' || 
+                    link.getAttribute('href') === './') {
+                    link.classList.add('active');
+                }
+            });
+        } else {
+            // Para páginas en subdirectorios
             navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href');
-                if (linkPath.includes(`${currentSection}/index.html`)) {
+                if (currentLocation.includes(linkPath) && linkPath !== '../index.html') {
                     link.classList.add('active');
+                }
+            });
+            
+            // Marcar como activo el enlace principal cuando estamos en una subpágina
+            const pathSegments = currentLocation.split('/');
+            if (pathSegments.length > 2) {
+                const currentSection = pathSegments[1]; // por ejemplo "servicios" en "/servicios/vigilancia.html"
+                
+                navLinks.forEach(link => {
+                    const linkPath = link.getAttribute('href');
+                    if (linkPath.includes(`${currentSection}/index.html`)) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        }
+        
+        return isHomePage;
+    }
+
+    // ----- MANEJO DEL MENÚ MÓVIL -----
+    function setupMobileMenu() {
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navLinksMenu.classList.toggle('show');
+                
+                // Si el menú tiene ícono, alternar entre barras y X
+                const menuIcon = menuToggle.querySelector('i');
+                if (menuIcon) {
+                    menuIcon.classList.toggle('fa-bars');
+                    menuIcon.classList.toggle('fa-times');
                 }
             });
         }
     }
-    
-    // Manejo del menú móvil
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinksMenu = document.querySelector('.nav-links');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', function() {
-            navLinksMenu.classList.toggle('show');
-            menuToggle.querySelector('i').classList.toggle('fa-bars');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
-        });
+
+    // ----- FUNCIÓN PARA SABER SI UN ELEMENTO ESTÁ EN VIEWPORT -----
+    function isElementInViewport(el, offset = 100) {
+        const rect = el.getBoundingClientRect();
+        return (
+            rect.top <= (window.innerHeight || document.documentElement.clientHeight) - offset &&
+            rect.bottom >= 0
+        );
     }
-    
-    // Botón "Volver arriba"
-    const backToTopButton = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', function() {
-        if (window.pageYOffset > 300) {
-            backToTopButton.classList.add('show');
-        } else {
-            backToTopButton.classList.remove('show');
-        }
+
+    // ----- ANIMACIONES DE SCROLL -----
+    function handleScrollAnimations() {
+        const scrollAnimations = document.querySelectorAll('.scroll-animation, .scroll-reveal, .scroll-animation-left, .scroll-animation-right, .scale-up');
         
-        // Efecto de scroll para el encabezado
-        const header = document.querySelector('.header');
-        if (window.pageYOffset > 50) {
-            header.style.height = '70px';
-            header.style.backgroundColor = 'rgba(10, 37, 60, 0.98)';
-        } else {
-            header.style.height = '80px';
-            header.style.backgroundColor = 'rgba(10, 37, 60, 0.95)';
-        }
-        
-        // Animaciones de elementos al hacer scroll
-        const scrollAnimations = document.querySelectorAll('.scroll-animation');
         scrollAnimations.forEach(element => {
-            const position = element.getBoundingClientRect();
-            
-            // Si el elemento es visible en la ventana
-            if (position.top < window.innerHeight - 100) {
+            if (isElementInViewport(element)) {
                 element.classList.add('show');
                 
                 // Activar animaciones internas con delay
@@ -96,208 +100,236 @@ document.addEventListener('DOMContentLoaded', function() {
                         el.style.opacity = '1';
                     }, 100 * index);
                 });
+            } else {
+                // Comentado para evitar que los elementos se oculten al salir del viewport
+                // element.classList.remove('show');
             }
-        });
-        
-        // Efecto de resaltado para enlaces del menú según la sección visible
-        const sections = document.querySelectorAll('section[id]');
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop - 150;
-            const sectionHeight = section.offsetHeight;
-            
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        if (current && isHomePage()) {
-            navLinks.forEach(item => {
-                item.classList.remove('active');
-                const href = item.getAttribute('href');
-                
-                if (href && href.includes(current)) {
-                    item.classList.add('active');
-                } else if (current === 'inicio' && (href === 'index.html' || href === '../index.html' || href === './')) {
-                    item.classList.add('active');
-                }
-            });
-        }
-    });
-    
-    if (backToTopButton) {
-        backToTopButton.addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
         });
     }
-    
-    // Animación para las tarjetas de servicios
-    const serviceCards = document.querySelectorAll('.service-card');
-    serviceCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px)';
-            this.style.boxShadow = '0 15px 30px rgba(10, 37, 60, 0.2)';
-        });
+
+    // ----- MANEJO DEL SCROLL -----
+    function setupScrollHandlers() {
+        const isHomePage = setActiveNavLinks();
         
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0)';
-            this.style.boxShadow = '0 5px 15px rgba(10, 37, 60, 0.1)';
-        });
-    });
-    
-    // Efecto parallax para el héroe
-    const hero = document.querySelector('.hero');
-    if (hero) {
         window.addEventListener('scroll', function() {
-            const scrollPosition = window.pageYOffset;
-            hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-        });
-    }
-    
-    // Animación para los íconos en hover
-    const iconHovers = document.querySelectorAll('.icon-hover');
-    iconHovers.forEach(icon => {
-        icon.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1) rotate(5deg)';
-        });
-        
-        icon.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1) rotate(0deg)';
-        });
-    });
-    
-    // Iniciar animaciones de entrada para elementos visibles al cargar
-    setTimeout(() => {
-        const initialAnimations = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
-        initialAnimations.forEach(el => {
-            el.style.opacity = '1';
-        });
-        
-        const scrollAnimations = document.querySelectorAll('.scroll-animation');
-        scrollAnimations.forEach(element => {
-            const position = element.getBoundingClientRect();
+            // Back to top button
+            if (backToTopButton) {
+                if (window.pageYOffset > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            }
             
-            if (position.top < window.innerHeight - 100) {
-                element.classList.add('show');
+            // Efecto de scroll para el encabezado
+            if (header) {
+                if (window.pageYOffset > 50) {
+                    header.style.height = '70px';
+                    header.style.backgroundColor = 'rgba(10, 37, 60, 0.98)';
+                } else {
+                    header.style.height = '80px';
+                    header.style.backgroundColor = 'rgba(10, 37, 60, 0.95)';
+                }
+            }
+            
+            // Efecto parallax para el héroe
+            if (hero) {
+                const scrollPosition = window.pageYOffset;
+                hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
+            }
+            
+            // Manejo de animaciones al scroll
+            handleScrollAnimations();
+            
+            // Efecto de resaltado para enlaces del menú según la sección visible
+            if (isHomePage()) {
+                const sections = document.querySelectorAll('section[id]');
+                let current = '';
+                const navLinks = document.querySelectorAll('.nav-links a');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                if (current) {
+                    navLinks.forEach(item => {
+                        item.classList.remove('active');
+                        const href = item.getAttribute('href');
+                        
+                        if (href && href.includes(current)) {
+                            item.classList.add('active');
+                        } else if (current === 'inicio' && (href === 'index.html' || href === '../index.html' || href === './')) {
+                            item.classList.add('active');
+                        }
+                    });
+                }
             }
         });
-    }, 100);
-    
-    // Smooth scroll para enlaces internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            
-            if (targetId === '#') return;
-            
-            e.preventDefault();
-            
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                // Cerrar menú móvil si está abierto
-                if (navLinksMenu.classList.contains('show')) {
-                    navLinksMenu.classList.remove('show');
-                    menuToggle.querySelector('i').classList.remove('fa-times');
-                    menuToggle.querySelector('i').classList.add('fa-bars');
-                }
-                
+    }
+
+    // ----- BOTÓN VOLVER ARRIBA -----
+    function setupBackToTopButton() {
+        if (backToTopButton) {
+            backToTopButton.addEventListener('click', function(e) {
+                e.preventDefault();
                 window.scrollTo({
-                    top: targetElement.offsetTop - 80,
+                    top: 0,
                     behavior: 'smooth'
                 });
-            }
-        });
-    });
-    
-    // Efecto de tipo typing para el título del héroe
-    const heroTitle = document.querySelector('.hero h1');
-    if (heroTitle) {
-        heroTitle.style.opacity = '1';
-        const text = heroTitle.textContent;
-        heroTitle.textContent = '';
-        
-        let i = 0;
-        const typeSpeed = 50;
-        
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.textContent += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, typeSpeed);
-            }
+            });
         }
-        
-        // Iniciar el efecto con un ligero retraso
-        setTimeout(typeWriter, 500);
     }
-    
-    // Detección de desplazamiento para efectos paralaje
-    const parallaxElements = document.querySelectorAll('.about-image, .service-image');
-    
-    window.addEventListener('scroll', function() {
-        parallaxElements.forEach(el => {
-            const scrollPosition = window.pageYOffset;
-            const elementPosition = el.offsetTop;
-            const distance = scrollPosition - elementPosition;
-            
-            if (Math.abs(distance) < window.innerHeight) {
-                // Efecto sutil de paralaje en imágenes
-                const img = el.querySelector('img');
-                if (img) {
-                    const translateY = distance * 0.05;
-                    img.style.transform = `translateY(${translateY}px)`;
-                }
-            }
-        });
-    });
-    
-    // Efecto de "flotación" para elementos destacados
-    const floatingElements = document.querySelectorAll('.pillar-box, .cert-box');
-    
-    let floating = true;
-    let floatY = 0;
-    let floatDirection = 1;
-    
-    function floatAnimation() {
-        if (floating) {
-            floatY += 0.1 * floatDirection;
-            
-            if (floatY > 5) {
-                floatDirection = -1;
-            } else if (floatY < -5) {
-                floatDirection = 1;
-            }
-            
-            floatingElements.forEach(el => {
-                el.style.transform = `translateY(${floatY}px)`;
+
+    // ----- ANIMACIÓN DE TARJETAS DE SERVICIOS -----
+    function setupServiceCards() {
+        const serviceCards = document.querySelectorAll('.service-card');
+        serviceCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 30px rgba(10, 37, 60, 0.2)';
             });
             
-            requestAnimationFrame(floatAnimation);
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(10, 37, 60, 0.1)';
+            });
+        });
+    }
+
+    // ----- ANIMACIÓN DE ÍCONOS EN HOVER -----
+    function setupIconHovers() {
+        const iconHovers = document.querySelectorAll('.icon-hover');
+        iconHovers.forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1) rotate(5deg)';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1) rotate(0deg)';
+            });
+        });
+    }
+
+    // ----- ANIMACIONES DE ENTRADA INICIALES -----
+    function setupInitialAnimations() {
+        setTimeout(() => {
+            const initialAnimations = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+            initialAnimations.forEach(el => {
+                el.style.opacity = '1';
+            });
+            
+            handleScrollAnimations();
+        }, 100);
+    }
+
+    // ----- SCROLL SUAVE PARA ENLACES INTERNOS -----
+    function setupSmoothScroll() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                e.preventDefault();
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    // Cerrar menú móvil si está abierto
+                    if (navLinksMenu && navLinksMenu.classList.contains('show')) {
+                        navLinksMenu.classList.remove('show');
+                        
+                        const menuIcon = menuToggle ? menuToggle.querySelector('i') : null;
+                        if (menuIcon) {
+                            menuIcon.classList.remove('fa-times');
+                            menuIcon.classList.add('fa-bars');
+                        }
+                    }
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // ----- EFECTO TYPING PARA TÍTULO DEL HÉROE -----
+    function setupHeroTyping() {
+        if (heroTitle) {
+            heroTitle.style.opacity = '1';
+            const text = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeSpeed = 50;
+            
+            function typeWriter() {
+                if (i < text.length) {
+                    heroTitle.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, typeSpeed);
+                }
+            }
+            
+            // Iniciar el efecto con un ligero retraso
+            setTimeout(typeWriter, 500);
         }
     }
-    
-    // Iniciar animación de flotación
-    floatAnimation();
-    
-    // Detener animación cuando no es visible
-    document.addEventListener('visibilitychange', function() {
-        floating = !document.hidden;
+
+    // ----- EFECTOS DE FLOTACIÓN PARA ELEMENTOS DESTACADOS -----
+    function setupFloatingElements() {
+        const floatingElements = document.querySelectorAll('.pillar-box, .cert-box');
         
-        if (floating) {
-            floatAnimation();
+        if (floatingElements.length === 0) return;
+        
+        let floating = true;
+        let floatY = 0;
+        let floatDirection = 1;
+        
+        function floatAnimation() {
+            if (floating) {
+                floatY += 0.1 * floatDirection;
+                
+                if (floatY > 5) {
+                    floatDirection = -1;
+                } else if (floatY < -5) {
+                    floatDirection = 1;
+                }
+                
+                floatingElements.forEach(el => {
+                    el.style.transform = `translateY(${floatY}px)`;
+                });
+                
+                requestAnimationFrame(floatAnimation);
+            }
         }
-    });
-    
-    // Efecto de partículas para la sección de certificaciones
-    const certSection = document.querySelector('.certifications-section');
-    
-    if (certSection) {
+        
+        // Iniciar animación de flotación
+        floatAnimation();
+        
+        // Detener animación cuando no es visible
+        document.addEventListener('visibilitychange', function() {
+            floating = !document.hidden;
+            
+            if (floating) {
+                floatAnimation();
+            }
+        });
+    }
+
+    // ----- EFECTO DE PARTÍCULAS PARA CERTIFICACIONES -----
+    function setupParticles() {
+        const certSection = document.querySelector('.certifications-section');
+        
+        if (!certSection) return;
+        
         // Crear contenedor de partículas
         const particlesContainer = document.createElement('div');
         particlesContainer.className = 'particles-container';
@@ -311,6 +343,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         certSection.style.position = 'relative';
         certSection.insertBefore(particlesContainer, certSection.firstChild);
+        
+        // Variable para controlar si las partículas están animando
+        let particlesActive = true;
         
         // Crear partículas
         for (let i = 0; i < 20; i++) {
@@ -337,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Animación de la partícula
             setInterval(() => {
-                if (floating) {
+                if (particlesActive) {
                     const currentLeft = parseFloat(particle.style.left);
                     const currentTop = parseFloat(particle.style.top);
                     
@@ -352,5 +387,60 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }, 50);
         }
+        
+        // Pausar animaciones cuando la sección no es visible
+        window.addEventListener('scroll', () => {
+            if (isElementInViewport(certSection, 0)) {
+                particlesActive = true;
+            } else {
+                particlesActive = false;
+            }
+        });
     }
+
+    // ----- CONFIGURACIÓN DE SECTORES CON DELAYS -----
+    function setupSectors() {
+        const sectorBoxes = document.querySelectorAll('.sector-box');
+        
+        sectorBoxes.forEach(box => {
+            const list = box.querySelector('ul');
+            if (list) {
+                const listItems = list.querySelectorAll('li');
+                
+                // Agregar delay a cada elemento de la lista para animación escalonada al hover
+                listItems.forEach((item, index) => {
+                    item.style.transitionDelay = `${index * 0.05}s`;
+                });
+            }
+        });
+    }
+
+    // ----- INICIALIZAR TODAS LAS FUNCIONES -----
+    function init() {
+        setupMobileMenu();
+        setupScrollHandlers();
+        setupBackToTopButton();
+        setupServiceCards();
+        setupIconHovers();
+        setupInitialAnimations();
+        setupSmoothScroll();
+        setupHeroTyping();
+        setupFloatingElements();
+        setupParticles();
+        setupSectors();
+        
+        // Manejar imágenes para que no se transformen
+        const parallaxElements = document.querySelectorAll('.about-image, .service-image');
+        parallaxElements.forEach(el => {
+            // Eliminar el efecto parallax en las imágenes
+            const imgs = el.querySelectorAll('img');
+            imgs.forEach(img => {
+                img.classList.add('no-transform');
+                img.style.transform = 'none';
+            });
+        });
+    }
+
+    // Iniciar todo
+    init();
 });
