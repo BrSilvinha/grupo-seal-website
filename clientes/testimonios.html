@@ -9,6 +9,60 @@
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos adicionales para los testimonios */
+        blockquote {
+            text-align: justify;
+            font-style: italic;
+            margin: 20px 0;
+            padding: 15px 20px;
+            border-left: 4px solid var(--primary);
+            background-color: rgba(10, 37, 60, 0.03);
+            border-radius: var(--border-radius);
+            position: relative;
+        }
+        
+        blockquote::before {
+            content: '\201C';
+            font-size: 60px;
+            position: absolute;
+            left: 10px;
+            top: -10px;
+            color: var(--primary);
+            opacity: 0.2;
+        }
+        
+        .client-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .client-logo-small {
+            height: 60px;
+            margin-right: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 5px;
+            background-color: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover .client-logo-small {
+            transform: scale(1.1);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-header .pillar-icon {
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -38,87 +92,100 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero">
         <div class="container">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-        <h1 class="fade-in">Testimonios y Casos de Éxito</h1>
+            <!-- Slides del carrusel -->
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+            
+            <!-- Contenido del hero (se mantiene igual) -->
+            <div class="container hero-content">
+                <h1 class="fade-in">Testimonios y Casos de Éxito</h1>
                 <p class="fade-in-up delay-1">Descubre lo que nuestros clientes opinan sobre nuestros servicios y cómo hemos contribuido a mejorar su seguridad con soluciones personalizadas.</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section">
-        <div class="container">
-            <div class="text-center">
-                <h2>Lo Que Dicen Nuestros Clientes</h2>
-            </div>
-            <div class="row">
-                <!-- Testimonial 1 -->
-                <div class="col-2">
-                    <div class="service-card scroll-reveal">
-                        <div class="service-content">
-                            <div class="pillar-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <blockquote>
-                                "Grupo SEAL ha demostrado un profesionalismo excepcional en la vigilancia de nuestras instalaciones. Su personal está altamente capacitado y siempre atento a cualquier situación. Nos han brindado tranquilidad y seguridad desde el primer día."
-                            </blockquote>
-                            <h3>Luis Felipe Castro</h3>
-                            <p>Administrador - IIRSA SUR CONCESIÓN VIAL</p>
+<!-- Testimonials Section -->
+<section class="section">
+    <div class="container">
+        <div class="text-center">
+            <h2>Lo Que Dicen Nuestros Clientes</h2>
+            <p>Conoce las experiencias de quienes han confiado en nuestros servicios de seguridad</p>
+        </div>
+        <div class="row">
+            <!-- Testimonial 1 -->
+            <div class="col-2">
+                <div class="service-card scroll-reveal">
+                    <div class="service-content">
+                        <div class="testimonial-header">
+                            <img src="https://cdn-icons-png.flaticon.com/512/3061/3061341.png" alt="Logo Empresa Construcción" class="client-logo-small">
                         </div>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="col-2">
-                    <div class="service-card scroll-reveal">
-                        <div class="service-content">
-                            <div class="pillar-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <blockquote>
-                                "La capacidad de respuesta y adaptabilidad que ha mostrado Grupo SEAL con nuestras necesidades específicas ha sido impresionante. Han implementado protocolos a medida que han mejorado significativamente nuestra seguridad."
-                            </blockquote>
-                            <h3>Yuri Zapata Águila</h3>
-                            <p>Administrador - COSTA GAS S.A.</p>
-                        </div>
+                        <blockquote style="text-align: justify;">
+                            "Grupo SEAL ha demostrado un profesionalismo excepcional en la vigilancia de nuestras instalaciones. Su personal está altamente capacitado y siempre atento a cualquier situación. Nos han brindado tranquilidad y seguridad desde el primer día."
+                        </blockquote>
+                        <h3>Luis Felipe Castro</h3>
+                        <p>Administrador - IIRSA SUR CONCESIÓN VIAL</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <!-- Testimonial 3 -->
-                <div class="col-2">
-                    <div class="service-card scroll-reveal">
-                        <div class="service-content">
-                            <div class="pillar-icon">
-                                <i class="fas fa-user-tie"></i>
-                            </div>
-                            <blockquote>
-                                "El equipo de Grupo SEAL se ha integrado perfectamente con nuestra institución, entendiendo nuestras necesidades específicas. La calidad del servicio y su compromiso con la excelencia nos hacen recomendarlos ampliamente."
-                            </blockquote>
-                            <h3>Socorro Rodríguez</h3>
-                            <p>Administradora - INSTITUTO NACIONAL DE DEFENSA CIVIL</p>
+            
+            <!-- Testimonial 2 -->
+            <div class="col-2">
+                <div class="service-card scroll-reveal">
+                    <div class="service-content">
+                        <div class="testimonial-header">
+                            <img src="https://cdn-icons-png.flaticon.com/512/8316/8316048.png" alt="Logo Empresa Gas" class="client-logo-small">
                         </div>
+                        <blockquote style="text-align: justify;">
+                            "La capacidad de respuesta y adaptabilidad que ha mostrado Grupo SEAL con nuestras necesidades específicas ha sido impresionante. Han implementado protocolos a medida que han mejorado significativamente nuestra seguridad."
+                        </blockquote>
+                        <h3>Yuri Zapata Águila</h3>
+                        <p>Administrador - COSTA GAS S.A.</p>
                     </div>
-                </div>
-                
-                <!-- Puedes agregar otro testimonio aquí para balancear la fila o dejar espacio en blanco -->
-                <div class="col-2">
-                    <!-- Espacio en blanco o nuevo testimonio -->
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row">
+            <!-- Testimonial 3 -->
+            <div class="col-2">
+                <div class="service-card scroll-reveal">
+                    <div class="service-content">
+                        <div class="testimonial-header">
+                            <img src="https://cdn-icons-png.flaticon.com/512/4300/4300003.png" alt="Logo Institución Pública" class="client-logo-small">
+                        </div>
+                        <blockquote style="text-align: justify;">
+                            "El equipo de Grupo SEAL se ha integrado perfectamente con nuestra institución, entendiendo nuestras necesidades específicas. La calidad del servicio y su compromiso con la excelencia nos hacen recomendarlos ampliamente."
+                        </blockquote>
+                        <h3>Socorro Rodríguez</h3>
+                        <p>Administradora - INSTITUTO NACIONAL DE DEFENSA CIVIL</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Testimonial 4 -->
+            <div class="col-2">
+                <div class="service-card scroll-reveal">
+                    <div class="service-content">
+                        <div class="testimonial-header">
+                            <img src="https://cdn-icons-png.flaticon.com/512/2942/2942789.png" alt="Logo Empresa Constructora" class="client-logo-small">
+                        </div>
+                        <blockquote style="text-align: justify;">
+                            "Contar con el respaldo de Grupo SEAL nos ha permitido enfocar nuestros esfuerzos en nuestro negocio principal, con la tranquilidad de que nuestra seguridad está en manos profesionales. Su atención al detalle y capacidad de anticipación marcan la diferencia."
+                        </blockquote>
+                        <h3>Carlos Mendoza</h3>
+                        <p>Gerente de Operaciones - EMPRESA CONSTRUCTORA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Case Studies Section -->
     <section class="section" style="background-color: #f9f9f9;">
         <div class="container">
             <div class="text-center">
                 <h2>Casos de Éxito</h2>
+                <p>Soluciones de seguridad que han marcado la diferencia para nuestros clientes</p>
             </div>
             <!-- Case Study 1 -->
             <div class="sector-box scroll-reveal">
@@ -179,11 +246,41 @@
                     </ul>
                 </div>
             </div>
+            
+            <!-- Case Study 3 (Nuevo) -->
+            <div class="sector-box scroll-reveal">
+                <div class="sector-icon">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <div class="sector-content">
+                    <h3>Protección de Instalaciones Industriales para PLANTA PROCESADORA</h3>
+                    <p>Diseño e implementación de un sistema de seguridad para instalaciones críticas.</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-2">
+                            <h3><i class="fas fa-exclamation-triangle"></i> El Desafío</h3>
+                            <p>Una importante planta procesadora requería proteger áreas críticas con diferentes niveles de seguridad y acceso restringido. Necesitaban un sistema que no afectara la operatividad pero garantizara la protección de activos valorados en millones de soles.</p>
+                        </div>
+                        <div class="col-2">
+                            <h3><i class="fas fa-lightbulb"></i> Nuestra Solución</h3>
+                            <p>Implementamos un sistema de seguridad por niveles, con personal especializado, procedimientos específicos para cada área según su criticidad, y protocolos de respuesta inmediata ante incidentes, junto con capacitación continua para el personal propio de la planta.</p>
+                        </div>
+                    </div>
+                    
+                    <h3 class="mt-4"><i class="fas fa-chart-line"></i> Resultados</h3>
+                    <ul>
+                        <li>Reducción del 90% en incidentes de seguridad.</li>
+                        <li>Optimización de procesos de acceso sin comprometer la seguridad.</li>
+                        <li>Capacidad de respuesta inmediata ante situaciones de emergencia.</li>
+                        <li>Certificación exitosa en auditorías de seguridad internacional.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Statistics Section -->
-    <section class="section">
+    <section class="section" style="background-color: #f9f9f9;">
         <div class="container text-center">
             <h2>Nuestros Resultados en Cifras</h2>
             <div class="pillars-container">
@@ -341,6 +438,19 @@
                     backToTopButton.classList.remove('show');
                 }
             });
+            
+            // Carrusel para las diapositivas del hero
+            const slides = document.querySelectorAll('.hero-slide');
+            let currentSlide = 0;
+            
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+            
+            // Cambiar de diapositiva cada 5 segundos
+            setInterval(nextSlide, 5000);
         });
     </script>
 </body>
