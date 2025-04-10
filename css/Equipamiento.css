@@ -157,7 +157,7 @@
 
 /* CTA Section */
 .cta-section {
-    background-image: linear-gradient(rgba(10, 37, 60, 0.85), rgba(10, 37, 60, 0.85)), url('../assets/imgenes/cta-bg.jpg');
+    background-image: linear-gradient(rgba(10, 37, 60, 0.85), rgba(10, 37, 60, 0.85)), url('../assets/imagenes/cta-bg.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
