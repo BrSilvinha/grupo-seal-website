@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestros Clientes | Grupo SEAL S.A.C.</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/Cliente.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
-
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/img/Logo-white.webp" alt="Logo Grupo SEAL">
-                
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -39,18 +36,32 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
         <div class="container hero-content">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-        <h1 class="fade-in">Nuestros Clientes</h1>
+            <h1 class="fade-in">Nuestros Clientes</h1>
             <p class="fade-in-up delay-1">Más de 12 años brindando soluciones de seguridad confiables a empresas y organizaciones líderes en diversos sectores. Conoce quiénes confían en Grupo SEAL para proteger lo que más importa.</p>
-         </div>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
     </section>
 
@@ -82,14 +93,14 @@
                 <div class="col">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="../assets/img/InfraestructuraConstrucción.webp" alt="Sector Infraestructura">
+                            <img src="../assets/img/services/InfraestructuraConstrucción.webp" alt="Sector Infraestructura">
                         </div>
                         <div class="service-content">
                             <h3><i class="fas fa-road"></i> Infraestructura y Construcción</h3>
                             <ul>
                                 <li>CONSORCIO ROVELLA INMAC</li>
                                 <li>MAQUINARIAS U-GUIL</li>
-                                <li>ODEBRECH INGENIERIA & CRONSTRUCCION - OEC </li>
+                                <li>ODEBRECH INGENIERIA & CONSTRUCCION - OEC</li>
                                 <li>IIRSA Norte CONCESIÓN VIAL</li>
                                 <li>VALORIZA CONSERVACIÓN DE INFRAESTRUCTURAS S.A.</li>
                                 <li>CONSTRUCTORA RUESMAA S.A.</li>
@@ -103,15 +114,15 @@
                 <div class="col">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="../assets/img/EntidadesGubernamentales.webp" alt="Sector Gobierno">
+                            <img src="../assets/img/services/EntidadesGubernamentales.webp" alt="Sector Gobierno">
                         </div>
                         <div class="service-content">
                             <h3><i class="fas fa-landmark"></i> Entidades Gubernamentales</h3>
                             <ul>
-                                <li>INSTITUTO NACIONAL DE DEFENSA CIVIL (INDECII)</li>
+                                <li>INSTITUTO NACIONAL DE DEFENSA CIVIL (INDECI)</li>
                                 <li>PROGRAMA NACIONAL PENSIÓN 65</li>
                                 <li>MINISTERIO DE LA MUJER</li>
-                                <li>SERNANPP</li>
+                                <li>SERNANP</li>
                                 <li>PRONABEC</li>
                                 <li>OTASS</li>
                                 <li>SEGURO INTEGRAL DE SALUD (SIS)</li>
@@ -125,7 +136,7 @@
                 <div class="col">
                     <div class="service-card">
                         <div class="service-image">
-                            <img src="../assets/img/ComercialEducación.webp" alt="Sector Comercial y Educación">
+                            <img src="../assets/img/services/ComercialEducación.webp" alt="Sector Comercial y Educación">
                         </div>
                         <div class="service-content">
                             <h3><i class="fas fa-store"></i> Comercial y Educación</h3>
@@ -154,37 +165,35 @@
             <div class="clients-grid">
                 <!-- Client 1 -->
                 <div class="client-logo">
-                    <img src="../assets/img/revella_inmac.webp" alt="Rovella INMAC">
+                    <img src="../assets/img/clients/revella_inmac.webp" alt="Rovella INMAC">
                 </div>
                 <!-- Client 2 -->
                 <div class="client-logo">
-                    <img src="../assets/img/Maquinarias-uguil.webp" alt="U-Guil">
+                    <img src="../assets/img/clients/Maquinarias-uguil.webp" alt="U-Guil">
                 </div>
                 <!-- Client 3 -->
                 <div class="client-logo">
-                    <img src="../assets/img/SUNARP.webp" alt="SUNARP">
+                    <img src="../assets/img/clients/SUNARP.webp" alt="SUNARP">
                 </div>
                 <!-- Client 4 -->
                 <div class="client-logo">
-                    <img src="../assets/img/OEC.webp" alt="OEC">
-                    
+                    <img src="../assets/img/clients/OEC.webp" alt="OEC">
                 </div>
                 <!-- Client 5 -->
                 <div class="client-logo">
-                    <img src="../assets/img/COSTAGASS.webp" alt="Costa Gas">
+                    <img src="../assets/img/clients/COSTAGASS.webp" alt="Costa Gas">
                 </div>
                 <!-- Client 6 -->
                 <div class="client-logo">
-                    <img src="../assets/img/INDECII.webp" alt="INDECII">
+                    <img src="../assets/img/clients/INDECI.webp" alt="INDECI">
                 </div>
-
                 <!-- Client 7 -->
                 <div class="client-logo">
-                    <img src="../assets/img/IIRSANorte.webp" alt="IIRSA Norte">
+                    <img src="../assets/img/clients/IIRSANorte.webp" alt="IIRSA Norte">
                 </div>
                 <!-- Client 8 -->
                 <div class="client-logo">
-                    <img src="../assets/img/COFIDE.webp" alt="COFIDE">
+                    <img src="../assets/img/clients/COFIDE.webp" alt="COFIDE">
                 </div>
             </div>
             <div class="text-center mt-4">
@@ -193,14 +202,14 @@
         </div>
     </section>
 
-<!-- Call to Action -->
-<section class="section cta-section">
-    <div class="container text-center">
-        <h2>Únete a nuestra cartera de clientes</h2>
-        <p>Descubre cómo nuestras soluciones de seguridad pueden adaptarse a las necesidades específicas de tu empresa.</p>
-        <a href="../contacto/index.html" class="btn btn-secondary">Solicitar Información</a>
-    </div>
-</section>
+    <!-- Call to Action -->
+    <section class="section cta-section">
+        <div class="container text-center">
+            <h2>Únete a nuestra cartera de clientes</h2>
+            <p>Descubre cómo nuestras soluciones de seguridad pueden adaptarse a las necesidades específicas de tu empresa.</p>
+            <a href="../contacto/index.html" class="btn btn-secondary">Solicitar Información</a>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -208,7 +217,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL Logo">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL Logo">
                     </div>
                     <p>Comprometidos a proteger lo que más importa. Soluciones confiables de seguridad respaldadas por un equipo altamente capacitado.</p>
                 </div>
@@ -267,6 +276,8 @@
     </a>
 
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

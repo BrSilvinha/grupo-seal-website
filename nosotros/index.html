@@ -4,26 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Grupo SEAL S.A.C.</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/img/Logo-white.webp" alt="Logo Grupo SEAL">
-                
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
                     <li><a href="../index.html">Inicio</a></li>
-                    <li><a href="../nosotros/index.html">Nosotros</a></li>
+                    <li><a href="../nosotros/index.html" class="active">Nosotros</a></li>
                     <li><a href="../servicios/index.html">Servicios</a></li>
                     <li><a href="../personal/index.html">Personal</a></li>
                     <li><a href="../clientes/index.html">Clientes</a></li>
@@ -38,22 +36,36 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
         <div class="container hero-content">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-                <h1 class="fade-in">Nosotros</h1>
-                <p class="fade-in delay-1">Conozca más sobre nuestra empresa, historia, misión, visión y valores que nos guían en nuestro compromiso con la seguridad.</p>
-                <div class="fade-in delay-2">
-                    <a href="#about-section" class="btn btn-primary">Conócenos</a>
-                    <a href="../contacto/index.html" class="btn">Contáctanos</a>
-                </div>
+            <h1 class="fade-in">Nosotros</h1>
+            <p class="fade-in delay-1">Conozca más sobre nuestra empresa, historia, misión, visión y valores que nos guían en nuestro compromiso con la seguridad.</p>
+            <div class="fade-in delay-2">
+                <a href="#about-section" class="btn btn-primary">Conócenos</a>
+                <a href="../contacto/index.html" class="btn btn-secondary">Contáctanos</a>
             </div>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
     </section>
 
@@ -65,12 +77,12 @@
             </div>
             <div class="about-content">
                 <div class="about-image scroll-animation-left">
-                    <img src="../assets/img/GrupoSeal.webp" alt="Equipo Grupo SEAL">
+                    <img src="../assets/img/team/GrupoSeal.webp" alt="Equipo Grupo SEAL">
                 </div>
                 <div class="about-text scroll-animation-right">
                     <p>GRUPO SEAL S.A.C es una empresa peruana con formación en seguridad militar, comprometida a proteger lo que más importa. Desde hace más de 12 años brindamos soluciones confiables para garantizar la tranquilidad de nuestros clientes, respaldados por un equipo altamente capacitado.</p>
                     
-                    <p>Contamos con un equipo de profesionales ex-integrantes de las fuerzas armadas, así como la asesoría profesional de personal PNP en actividad y retiro, especialistas en seguridad ciudadana, análiSIS situacional, análiSIS estructural, seguridad integral y salud ocupacional.</p>
+                    <p>Contamos con un equipo de profesionales ex-integrantes de las fuerzas armadas, así como la asesoría profesional de personal PNP en actividad y retiro, especialistas en seguridad ciudadana, análisis situacional, análisis estructural, seguridad integral y salud ocupacional.</p>
                     
                     <p>Nos diferenciamos por nuestra personalización en el servicio y nuestra ética profesional, asegurando la máxima eficiencia en cada proyecto. Trabajamos con integridad contribuyendo a un entorno más seguro para todos.</p>
                     
@@ -97,7 +109,7 @@
                         <i class="fas fa-certificate"></i>
                     </div>
                     <h3>SUCAMEC</h3>
-                    <p>Autorización  para servicios de vigilancia privada con armas de fuego.</p>
+                    <p>Autorización para servicios de vigilancia privada con armas de fuego.</p>
                 </div>
                 
                 <div class="pillar-box cert-item scroll-animation scale-up delay-3">
@@ -121,7 +133,7 @@
             <div class="footer-content">
                 <div class="footer-column fade-in-left">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL Logo">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL Logo">
                     </div>
                     <p>Protegemos lo que más importa con soluciones de seguridad personalizadas y un equipo altamente capacitado.</p>
                 </div>
@@ -186,7 +198,10 @@
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
+    
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
