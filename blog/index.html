@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Noticias y Consejos de Seguridad | Grupo SEAL S.A.C.</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../nosotros/index.html">Nosotros</a></li>
+                    <li><a href="../servicios/index.html">Servicios</a></li>
+                    <li><a href="../personal/index.html">Personal</a></li>
+                    <li><a href="../clientes/index.html">Clientes</a></li>
+                    <li><a href="../contacto/index.html">Contacto</a></li>
+                    <li><a href="../contacto/sucursales.html">Sucursales</a></li>
+                    <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
+                    <li><a href="index.html" class="active">Blog</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <div class="container hero-content">
+            <h1 class="fade-in">Blog de Seguridad</h1>
+            <p class="fade-in-up delay-1">Noticias, consejos y tendencias en seguridad privada</p>
+        </div>
+
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </section>
+
+    <!-- Blog Articles -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Últimas Publicaciones</h2>
+            </div>
+            
+            <!-- Article 1 -->
+            <article class="service-card scroll-reveal">
+                <div class="service-image">
+                    <img src="../assets/img/blog/seguridad-empresarial.webp" alt="Tendencias en Seguridad Empresarial">
+                </div>
+                <div class="service-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 15 de Enero, 2025</span>
+                        <span><i class="fas fa-user"></i> Equipo Grupo SEAL</span>
+                    </div>
+                    <h3>Tendencias en Seguridad Empresarial para 2025</h3>
+                    <p>Descubre las principales tendencias que marcarán el sector de la seguridad privada este año, desde nuevas tecnologías hasta metodologías innovadoras de protección.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="service-card scroll-reveal">
+                <div class="service-image">
+                    <img src="../assets/img/blog/protocolos-emergencia.webp" alt="Protocolos de Emergencia">
+                </div>
+                <div class="service-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 10 de Enero, 2025</span>
+                        <span><i class="fas fa-user"></i> Especialistas en Seguridad</span>
+                    </div>
+                    <h3>Protocolos de Emergencia en Centros Comerciales</h3>
+                    <p>Conoce los protocolos esenciales que todo centro comercial debe implementar para garantizar la seguridad de visitantes y trabajadores en situaciones de emergencia.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="service-card scroll-reveal">
+                <div class="service-image">
+                    <img src="../assets/img/blog/capacitacion-personal.webp" alt="Capacitación de Personal">
+                </div>
+                <div class="service-content">
+                    <div class="blog-meta">
+                        <span><i class="fas fa-calendar"></i> 5 de Enero, 2025</span>
+                        <span><i class="fas fa-user"></i> Departamento de Capacitación</span>
+                    </div>
+                    <h3>La Importancia de la Capacitación Continua en Seguridad</h3>
+                    <p>Exploramos por qué la formación constante del personal de seguridad es fundamental para mantener altos estándares de protección y profesionalismo.</p>
+                    <a href="#" class="btn">Leer más</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="cert-box scroll-reveal">
+                <div class="cert-icon">
+                    <i class="fas fa-envelope-open-text"></i>
+                </div>
+                <h3>Mantente Informado</h3>
+                <p>Suscríbete a nuestro boletín para recibir las últimas noticias, consejos y actualizaciones sobre seguridad privada.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" style="padding: 12px; margin-right: 10px; border-radius: 4px; border: 1px solid #ddd;">
+                    <button class="btn btn-primary">Suscribirse</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL">
+                    </div>
+                    <p>Comprometidos a proteger lo que más importa. Soluciones confiables de seguridad respaldadas por un equipo altamente capacitado.</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../nosotros/index.html">Nosotros</a></li>
+                        <li><a href="../servicios/index.html">Servicios</a></li>
+                        <li><a href="../personal/index.html">Personal</a></li>
+                        <li><a href="../clientes/index.html">Clientes</a></li>
+                        <li><a href="../contacto/index.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Servicios</h4>
+                    <ul class="footer-links">
+                        <li><a href="../servicios/vigilancia.html">Vigilancia Privada</a></li>
+                        <li><a href="../servicios/resguardo.html">Resguardo Personal</a></li>
+                        <li><a href="../servicios/sectores.html">Servicios por Sectores</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>Carretera Fernando Belaunde Terry, Km. 56, Int 01, Sector San Isidro, Motupe, Lambayeque</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>962 339 890 - 962 339 494</div>
+                    </div>
+                    <div class="footer-contact-item">
+                        <div class="footer-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>Gerentegeneral@gruposealsac.com</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Grupo SEAL S.A.C. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>

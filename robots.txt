@@ -1,0 +1,52 @@
+# robots.txt para Grupo SEAL S.A.C.
+# https://www.gruposealsac.com/robots.txt
+
+User-agent: *
+Allow: /
+
+# Permitir acceso a archivos CSS y JS para mejor indexación
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
+
+# Bloquear archivos administrativos o sensibles
+Disallow: /admin/
+Disallow: /backup/
+Disallow: /.git/
+Disallow: /config/
+Disallow: /private/
+
+# Bloquear parámetros de búsqueda y formularios
+Disallow: /*?search=
+Disallow: /*?q=
+Disallow: /search
+Disallow: /404
+
+# Permitir bots específicos importantes
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot  
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Bloquear bots problemáticos
+User-agent: CCBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Crawl-delay para evitar sobrecarga del servidor
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://www.gruposealsac.com/sitemap.xml

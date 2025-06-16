@@ -1,0 +1,72 @@
+<!-- CONFIGURACIÓN COMPLETA DE FAVICON -->
+<!-- Reemplaza esta línea en el <head> de todos los archivos HTML: -->
+<!-- <link rel="icon" href="../assets/img/icons/LogoWeb.webp"> -->
+
+<!-- CON ESTA CONFIGURACIÓN COMPLETA: -->
+
+<!-- Favicon tradicional -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/img/icons/favicon.svg" type="image/svg+xml">
+
+<!-- Apple Touch Icons -->
+<link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png">
+
+<!-- Favicon para diferentes tamaños -->
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/favicon-96x96.png">
+
+<!-- Android/Chrome -->
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#0a253c">
+
+<!-- Microsoft -->
+<meta name="msapplication-TileColor" content="#0a253c">
+<meta name="msapplication-TileImage" content="/assets/img/icons/mstile-144x144.png">
+
+<!-- 
+ARCHIVOS QUE NECESITAS CREAR A PARTIR DEL LOGO EXISTENTE:
+
+1. favicon.ico (16x16, 32x32, 48x48 en un solo archivo)
+2. /assets/img/icons/favicon.svg (versión SVG del logo)
+3. /assets/img/icons/apple-touch-icon.png (180x180)
+4. /assets/img/icons/favicon-16x16.png
+5. /assets/img/icons/favicon-32x32.png
+6. /assets/img/icons/favicon-96x96.png
+7. /assets/img/icons/mstile-144x144.png
+
+HERRAMIENTAS RECOMENDADAS:
+- RealFaviconGenerator (https://realfavicongenerator.net/)
+- Favicon.io (https://favicon.io/)
+
+PASOS:
+1. Usa el archivo LogoWeb.webp existente como base
+2. Redimensiona a los tamaños necesarios
+3. Convierte a los formatos requeridos
+4. Reemplaza las referencias en todos los archivos HTML
+-->
+
+<!-- MANIFEST.JSON (crear en la raíz) -->
+<!--
+{
+  "name": "Grupo SEAL S.A.C.",
+  "short_name": "Grupo SEAL",
+  "description": "Servicios de Seguridad Privada",
+  "icons": [
+    {
+      "src": "/assets/img/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/icons/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0a253c",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}
+-->
