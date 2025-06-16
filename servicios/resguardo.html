@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resguardo Personal | Grupo SEAL</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/img/Logo-white.webp" alt="Logo Grupo SEAL" class="fade-in">
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL" class="fade-in">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -38,17 +38,31 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-                <h1 class="fade-in-up delay-1">Resguardo Personal</h1>
-                <p class="fade-in-up delay-2">Protección personalizada para ejecutivos, empresarios y personalidades que requieren seguridad especializada</p>
-                <a href="../contacto/index.html" class="btn btn-primary fade-in-up delay-3">Solicitar Información</a>
-            </div>
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
+        <div class="container hero-content">
+            <h1 class="fade-in-up delay-1">Resguardo Personal</h1>
+            <p class="fade-in-up delay-2">Protección personalizada para ejecutivos, empresarios y personalidades que requieren seguridad especializada</p>
+            <a href="../contacto/index.html" class="btn btn-primary fade-in-up delay-3">Solicitar Información</a>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
     </section>
 
@@ -72,7 +86,7 @@
                     </ul>
                 </div>
                 <div class="about-image scroll-animation-right">
-                    <img src="../assets/img/Resguardo.webp" alt="Servicio de Resguardo Personal">
+                    <img src="../assets/img/services/Resguardo.webp" alt="Servicio de Resguardo Personal">
                 </div>
             </div>
         </div>
@@ -161,7 +175,7 @@
             </div>
             <div class="about-content">
                 <div class="about-image scroll-animation-left">
-                    <img src="../assets/img/AgenteResguardo.webp" alt="Agentes de Seguridad">
+                    <img src="../assets/img/services/AgenteResguardo.webp" alt="Agentes de Seguridad">
                 </div>
                 <div class="about-text scroll-animation-right">
                     <h3><i class="fas fa-check-circle"></i> Cualificaciones profesionales</h3>
@@ -219,7 +233,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL">
                     </div>
                     <p>Protegemos lo que más importa con soluciones confiables de seguridad, respaldados por un equipo altamente capacitado.</p>
                 </div>
@@ -284,6 +298,9 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="../js/main.js"></script>   
+    <!-- Scripts -->
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

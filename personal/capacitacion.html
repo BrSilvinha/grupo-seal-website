@@ -3,35 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capacitación de Personal | Grupo SEAL S.A.C.</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <title>Equipamiento | Grupo SEAL S.A.C.</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Estilos adicionales para los logos */
-        .service-logo {
-            font-size: 60px;
-            color: #003366;
+        /* Estilos específicos para equipamiento */
+        .equipment-image {
+            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .equipment-image img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .equipment-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .equipment-desc {
+            background-color: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin-bottom: 20px;
+        }
+        
+        .check-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .check-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .check-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .check-list li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .equipment-note {
+            background-color: rgba(10, 37, 60, 0.05);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--primary);
+            font-style: italic;
+        }
+        
+        .equipment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .equipment-item {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
             text-align: center;
-            margin: 20px 0;
-            height: 150px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .equipment-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+        }
+        
+        .equipment-icon {
+            width: 80px;
+            height: 80px;
+            background-color: rgba(10, 37, 60, 0.1);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f5f5f5;
-            border-radius: 5px;
+            margin: 0 auto 20px;
+            transition: var(--transition);
+        }
+        
+        .equipment-icon i {
+            font-size: 36px;
+            color: var(--primary);
+        }
+        
+        .equipment-item:hover .equipment-icon {
+            background-color: var(--primary);
+        }
+        
+        .equipment-item:hover .equipment-icon i {
+            color: var(--white);
+        }
+        
+        .arrow-list {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+        
+        .arrow-list li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .arrow-list li::before {
+            content: '▶';
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            top: 5px;
+        }
+        
+        .legal-box {
+            background-color: rgba(10, 37, 60, 0.05);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            margin: 40px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+        }
+        
+        .legal-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .legal-icon i {
+            font-size: 36px;
+        }
+        
+        .legal-content {
+            flex: 1;
+        }
+        
+        .legal-content h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+        
+        .cta-section {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            color: var(--white);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .align-center {
+            align-items: center;
+        }
+        
+        @media (max-width: 768px) {
+            .legal-box {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .equipment-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-     <!-- Header -->
-     <header class="header">
+    <!-- Header -->
+    <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="../assets/img/Logo-white.webp" alt="Logo Grupo SEAL">
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -53,266 +229,209 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
+        <div class="container hero-content">
+            <h1>Equipamiento</h1>
+            <p>Dotamos a nuestro personal con los equipos y herramientas necesarios para garantizar un servicio de seguridad óptimo y profesional.</p>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </section>
+
+    <!-- Uniformes Section -->
+    <section class="section">
         <div class="container">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-                <h1>Programas de Capacitación</h1>
-                <p>El pilar de nuestra excelencia es la formación constante y rigurosa que recibe nuestro personal de seguridad.</p>
-                <a href="#entrenamiento" class="btn btn-secondary">Conoce Nuestro Entrenamiento</a>
+            <div class="section-title">
+                <h2>Uniformes Reglamentarios</h2>
+            </div>
+            <div class="row">
+                <div class="col-2">
+                    <div class="equipment-image scroll-reveal">
+                        <img src="../assets/img/team/UniformeAz.webp" alt="Uniforme Azul">
+                    </div>
+                    <div class="equipment-desc scroll-reveal">
+                        <h3>Uniforme Azul (Uniforme N° 1)</h3>
+                        <ul class="check-list">
+                            <li>Pantalón azul</li>
+                            <li>Camisa blanca manga larga y manga corta</li>
+                            <li>Corbata color guinda</li>
+                            <li>Gorro color azul</li>
+                            <li>Borceguíes negro</li>
+                            <li>Chompa cuello en "V" azul</li>
+                            <li>Capotín azul (polar)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div class="equipment-image scroll-reveal">
+                        <img src="../assets/img/team/UniformeMa.webp" alt="Uniforme Marrón">
+                    </div>
+                    <div class="equipment-desc scroll-reveal">
+                        <h3>Uniforme Marrón (Uniforme N° 2)</h3>
+                        <ul class="check-list">
+                            <li>Pantalón marrón</li>
+                            <li>Camisa manga larga y manga corta</li>
+                            <li>Corbata color marrón</li>
+                            <li>Gorro color marrón</li>
+                            <li>Borceguíes marrones</li>
+                            <li>Chompa cuello en "V" marrón</li>
+                            <li>Capotín marrón (polar)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="section-text mt-4">
+                <p class="equipment-note">La empresa dota de uniformes nuevos (dos dotaciones al año) a todo nuestro personal, de acuerdo con lo establecido por la SUCAMEC, asegurando que todos nuestros agentes proyecten una imagen profesional y estén adecuadamente identificados.</p>
             </div>
         </div>
     </section>
 
-    <!-- Training Overview Section -->
-    <section id="entrenamiento" class="section about-section">
+    <!-- Equipos de Seguridad Section -->
+    <section class="section bg-light">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Nuestro Plan de Entrenamiento</h2>
+            <div class="section-title">
+                <h2>Equipos de Seguridad</h2>
             </div>
-            <div class="about-content">
-                <div class="about-image scroll-reveal">
-                    <img src="../assets/img/Capacitacion.webp" alt="Capacitación">
-                </div>
-                <div class="about-text scroll-reveal">
-                    <h3>Formación Integral</h3>
-                    <p>En GRUPO SEAL S.A.C. consideramos que la capacitación constante es fundamental para garantizar un servicio de excelencia. Todo nuestro personal pasa por un riguroso plan de entrenamiento que incluye:</p>
-                    <ul class="sector-content">
-                        <li>Cursos certificados por SUCAMEC</li>
-                        <li>Capacitación en procedimientos operativos estándar</li>
-                        <li>Entrenamiento en protocolos de seguridad</li>
-                        <li>Técnicas de observación y detección de riesgos</li>
-                        <li>Manejo de crisis y situaciones de emergencia</li>
-                        <li>Atención al cliente y comunicación efectiva</li>
+            <div class="equipment-grid">
+                <div class="equipment-item scroll-reveal">
+                    <div class="equipment-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Protección Personal</h3>
+                    <ul class="arrow-list">
+                        <li>Correaje completo (vara, tahalí y cartuchera)</li>
+                        <li>Chalecos refractivos (a solicitud del cliente)</li>
+                        <li>Chalecos anti balas (para personal que usa arma)</li>
+                        <li>Protectores de cabeza, cara, nariz, ojos y oídos</li>
+                        <li>Protectores de brazos, manos, piernas y pies</li>
                     </ul>
-                    <p>Cada agente de seguridad debe aprobar evaluaciones teóricas y prácticas antes de incorporarse a nuestro equipo de trabajo.</p>
-                    <a href="#programas" class="btn">Ver Programas Especializados</a>
                 </div>
+                <div class="equipment-item scroll-reveal">
+                    <div class="equipment-icon">
+                        <i class="fas fa-broadcast-tower"></i>
+                    </div>
+                    <h3>Comunicación</h3>
+                    <ul class="arrow-list">
+                        <li>Radio VHF/UHF MOTOROLAS</li>
+                        <li>Telefonía celular</li>
+                        <li>Silbato</li>
+                        <li>Central de monitoreo (24/7)</li>
+                    </ul>
+                </div>
+                <div class="equipment-item scroll-reveal">
+                    <div class="equipment-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Detección</h3>
+                    <ul class="arrow-list">
+                        <li>Detector de metales</li>
+                        <li>Equipos de revisión</li>
+                        <li>Sistemas de registro de rondas</li>
+                    </ul>
+                </div>
+                <div class="equipment-item scroll-reveal">
+                    <div class="equipment-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Movilidad</h3>
+                    <ul class="arrow-list">
+                        <li>Transporte vehicular</li>
+                        <li>Transporte motorizado</li>
+                        <li>Unidades de respuesta rápida</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p class="equipment-note">Todos nuestros equipos cumplen con las normativas establecidas por SUCAMEC y están en perfecto estado operativo, garantizando el correcto desempeño de nuestros agentes durante su servicio.</p>
             </div>
         </div>
     </section>
 
-    <!-- Training Programs Section -->
-    <section id="programas" class="section services-section" style="background-color: #f9f9f9;">
+    <!-- Armamento Section -->
+    <section class="section">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Programas Especializados</h2>
-                <p class="text-center">Capacitaciones específicas para garantizar un servicio integral y eficiente en todos los escenarios.</p>
+            <div class="section-title">
+                <h2>Armamento Reglamentario</h2>
             </div>
-            <div class="row scroll-reveal">
+            <div class="row align-center">
                 <div class="col-2">
-                    <div class="service-card">
-                        <div class="service-logo">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Primeros Auxilios</h3>
-                            <p>Capacitación integral en técnicas de primeros auxilios para responder adecuadamente en situaciones de emergencia médica.</p>
-                            <ul class="sector-content">
-                                <li>RCP básico y avanzado</li>
-                                <li>Atención de heridas y traumatismos</li>
-                                <li>Manejo de hemorragias</li>
-                                <li>Inmovilización de fracturas</li>
-                                <li>Respuesta a emergencias cardíacas</li>
-                            </ul>
-                        </div>
+                    <div class="equipment-image scroll-reveal">
+                        <img src="../assets/img/team/Armas.webp" alt="Armamento Reglamentario">
                     </div>
                 </div>
                 <div class="col-2">
-                    <div class="service-card">
-                        <div class="service-logo">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Defensa Personal</h3>
-                            <p>Entrenamiento en técnicas de defensa personal para garantizar la seguridad propia y de las personas protegidas.</p>
-                            <ul class="sector-content">
-                                <li>Técnicas de control y reducción</li>
-                                <li>Manejo de situaciones de riesgo</li>
-                                <li>Desarme de agresores</li>
-                                <li>Tácticas defensivas no letales</li>
-                                <li>Contención de personas agresivas</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row scroll-reveal">
-                <div class="col-2">
-                    <div class="service-card">
-                        <div class="service-logo">
-                            <i class="fas fa-fire-extinguisher"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Control de Incendios</h3>
-                            <p>Capacitación en prevención y control de incendios, asegurando una respuesta rápida y eficaz.</p>
-                            <ul class="sector-content">
-                                <li>Tipos de fuego y agentes extintores</li>
-                                <li>Uso correcto de extintores</li>
-                                <li>Evacuación y control de multitudes</li>
-                                <li>Prevención de incendios</li>
-                                <li>Coordinación con bomberos</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-2">
-                    <div class="service-card">
-                        <div class="service-logo">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <div class="service-content">
-                            <h3>Seguridad Especializada</h3>
-                            <p>Formación en protocolos avanzados de seguridad adaptados a diferentes escenarios y necesidades.</p>
-                            <ul class="sector-content">
-                                <li>Seguridad para eventos masivos</li>
-                                <li>Protección de instalaciones críticas</li>
-                                <li>Vigilancia electrónica</li>
-                                <li>Manejo de amenazas específicas</li>
-                                <li>Protección VIP y ejecutiva</li>
-                            </ul>
-                        </div>
+                    <div class="about-text scroll-reveal">
+                        <h3>Armas Debidamente Autorizadas</h3>
+                        <p>Contamos con licencias de uso de armas emitidas por la SUCAMEC, que nos autorizan para prestar el servicio de vigilancia privada con armas de fuego en el ámbito del departamento de Lambayeque, según Autorización .</p>
+                        
+                        <p>Nuestras armas:</p>
+                        <ul class="check-list">
+                            <li>Están debidamente registradas y autorizadas</li>
+                            <li>Reciben mantenimiento periódico profesional</li>
+                            <li>Son manipuladas únicamente por personal certificado</li>
+                            <li>Se transportan siguiendo estrictos protocolos de seguridad</li>
+                            <li>Son asignadas a agentes con Licencia L4 y experiencia comprobada</li>
+                        </ul>
+                        
+                        <p class="mt-4">Todo nuestro personal armado cuenta con chalecos anti balas y está capacitado en el manejo de armas cortas y escopetas, cumpliendo con todos los requisitos legales establecidos.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Certifications Section -->
-    <section class="section pillars-section">
+    <!-- Legal Section -->
+    <section class="section bg-light">
         <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Certificaciones y Formación Continua</h2>
-                <p class="text-center">Garantizamos personal altamente calificado con las mejores certificaciones del sector.</p>
+            <div class="section-title">
+                <h2>Respaldo Legal</h2>
             </div>
-            <div class="pillars-container scroll-reveal">
-                <div class="pillar-box">
-                    <div class="pillar-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3>Certificación SUCAMEC</h3>
-                    <p>Todos nuestros agentes cuentan con certificación vigente de la Superintendencia Nacional de Control de Servicios de Seguridad, Armas, Municiones y Explosivos de Uso Civil.</p>
+            <div class="legal-box scroll-reveal">
+                <div class="legal-icon">
+                    <i class="fas fa-certificate"></i>
                 </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Actualización Permanente</h3>
-                    <p>Nuestro personal recibe capacitación continua para mantenerse al día con las últimas técnicas y normativas en seguridad privada.</p>
-                </div>
-                <div class="pillar-box">
-                    <div class="pillar-icon">
-                        <i class="fas fa-user-shield"></i>
-                    </div>
-                    <h3>Especialización por Sector</h3>
-                    <p>Formación específica según el sector donde prestarán servicios: banca, retail, industrial, residencial, entre otros.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Development Philosophy Section -->
-    <section class="section mission-vision">
-        <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Filosofía de Desarrollo</h2>
-                <p class="text-center">Formamos profesionales íntegros preparados para la seguridad moderna.</p>
-            </div>
-            <div class="achievements-grid scroll-reveal">
-                <div class="service-card">
-                    <div class="service-content">
-                        <div class="pillar-icon">
-                            <i class="fas fa-user"></i>
-                        </div>
-                        <h3>Como Persona</h3>
-                        <p>Fomentamos el desarrollo integral de nuestros colaboradores, promoviendo valores éticos, responsabilidad y compromiso con la sociedad.</p>
-                        <p>Creemos que un buen agente de seguridad debe ser primero una persona íntegra y con principios sólidos.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <div class="pillar-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Como Vigilante</h3>
-                        <p>Desarrollamos habilidades técnicas y profesionales específicas del ámbito de la seguridad, con énfasis en la observación, prevención y respuesta.</p>
-                        <p>Nuestros agentes están capacitados para anticipar situaciones de riesgo y actuar de forma proactiva.</p>
-                    </div>
-                </div>
-                <div class="service-card">
-                    <div class="service-content">
-                        <div class="pillar-icon">
-                            <i class="fas fa-city"></i>
-                        </div>
-                        <h3>Como Ciudadano</h3>
-                        <p>Incentivamos la conciencia cívica y el compromiso con la comunidad, entendiendo que la seguridad es un bien común que beneficia a toda la sociedad.</p>
-                        <p>Fomentamos el respeto a las leyes y la colaboración con las autoridades competentes.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="section" style="background-color: #f9f9f9;">
-        <div class="container">
-            <div class="section-title scroll-reveal">
-                <h2>Proceso de Formación</h2>
-                <p class="text-center">Un recorrido estructurado para garantizar la excelencia en cada uno de nuestros agentes.</p>
-            </div>
-            <div class="timeline scroll-reveal">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Fase 1</div>
-                    <div class="timeline-content">
-                        <h3>Selección Rigurosa</h3>
-                        <p>Proceso de evaluación integral que incluye verificación de antecedentes, evaluaciones psicológicas y entrevistas personalizadas.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Fase 2</div>
-                    <div class="timeline-content">
-                        <h3>Formación Básica</h3>
-                        <p>Capacitación inicial en fundamentos de seguridad, marco legal, procedimientos operativos y protocolos de emergencia.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Fase 3</div>
-                    <div class="timeline-content">
-                        <h3>Especialización</h3>
-                        <p>Entrenamiento específico según el sector al que será asignado el agente, con enfoque en los riesgos particulares de cada industria.</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Fase 4</div>
-                    <div class="timeline-content">
-                        <h3>Formación Continua</h3>
-                        <p>Programa de capacitación permanente con actualizaciones periódicas, simulacros y talleres de perfeccionamiento.</p>
-                    </div>
+                <div class="legal-content">
+                    <h3>Autorizaciones y Certificaciones</h3>
+                    <p>GRUPO SEAL S.A.C. opera bajo la Autorización , otorgada el 30 de Mayo de 2024, que nos autoriza para prestar servicios de vigilancia privada con armas de fuego hasta el 21 de Mayo de 2029.</p>
+                    
+                    <p>Cumplimos con todas las normativas establecidas en:</p>
+                    <ul class="arrow-list">
+                        <li>Ley N° 28879 "Ley Servicios de Seguridad Privada"</li>
+                        <li>Decreto Legislativo N° 1213, que regula los servicios de seguridad privada</li>
+                        <li>Disposiciones de la Superintendencia de Control de Servicios de Seguridad, Armas, Municiones y Explosivos de uso Civil (SUCAMEC)</li>
+                    </ul>
+                    
+                    <p class="mt-3">Contamos con una Carta Fianza Nº 1018394, expedida por BANCO DE CRÉDITO, por el monto de cinco (05) UIT, en garantía del fiel cumplimiento de nuestras obligaciones legales.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="section text-center">
+    <section class="cta-section">
         <div class="container">
-            <div class="cert-box scroll-reveal">
-                <div class="cert-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3>¿Necesitas un Equipo de Seguridad Altamente Capacitado?</h3>
-                <p>En Grupo SEAL contamos con personal entrenado y certificado para brindar soluciones de seguridad adaptadas a tus necesidades específicas.</p>
-                <div class="mt-4">
-                    <a href="../contacto/index.html" class="btn btn-primary">Solicitar Información</a>
-                    <a href="../contacto/trabaja.html" class="btn" style="margin-left: 15px;">Únete a Nuestro Equipo</a>
-                </div>
+            <div class="cta-content">
+                <h2>¿Necesita servicios de seguridad confiables?</h2>
+                <p>Contamos con el personal y equipamiento necesario para brindarle la tranquilidad que merece.</p>
+                <a href="../contacto/index.html" class="btn btn-secondary mt-4">Contáctenos</a>
             </div>
         </div>
     </section>
@@ -323,7 +442,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL">
                     </div>
                     <p>Empresa peruana con formación militar comprometida a proteger lo que más importa. Desde hace +12 años brindamos soluciones confiables para garantizar la tranquilidad de nuestros clientes.</p>
                 </div>
@@ -333,7 +452,7 @@
                         <li><a href="../index.html">Inicio</a></li>
                         <li><a href="../nosotros/index.html">Nosotros</a></li>
                         <li><a href="../servicios/index.html">Servicios</a></li>
-                        <li><a href="index.html">Personal</a></li>
+                        <li><a href="../personal/index.html">Personal</a></li>
                         <li><a href="../clientes/index.html">Clientes</a></li>
                         <li><a href="../contacto/index.html">Contacto</a></li>
                     </ul>
@@ -344,7 +463,6 @@
                         <li><a href="../servicios/vigilancia.html">Vigilancia Privada</a></li>
                         <li><a href="../servicios/resguardo.html">Resguardo Personal</a></li>
                         <li><a href="../servicios/sectores.html">Servicios por Sectores</a></li>
-                        <li><a href="capacitacion.html">Capacitación</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -385,8 +503,10 @@
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
+
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
