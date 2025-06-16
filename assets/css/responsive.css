@@ -105,6 +105,21 @@
     .equipment-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* Carrusel para tablet */
+    .carousel-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .carousel-prev {
+        left: 20px;
+    }
+    
+    .carousel-next {
+        right: 20px;
+    }
 }
 
 /* TABLET PORTRAIT - 768px y menos */
@@ -388,6 +403,47 @@
     .cert-icon i {
         font-size: 28px;
     }
+    
+    /* ===================================
+       CARRUSEL RESPONSIVE MOBILE
+       ================================= */
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .carousel-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .carousel-prev {
+        left: 15px;
+    }
+    
+    .carousel-next {
+        right: 15px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .carousel-indicators {
+        bottom: 25px;
+    }
 }
 
 /* MOBILE SMALL - 576px y menos */
@@ -565,6 +621,31 @@
         padding: 12px 25px;
         font-size: 14px;
     }
+    
+    /* ===================================
+       CARRUSEL RESPONSIVE MOBILE SMALL
+       ================================= */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .carousel-nav {
+        display: none; /* Ocultar flechas en móviles muy pequeños */
+    }
+    
+    .carousel-indicators {
+        bottom: 20px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+    
+    /* Hacer el carrusel más fácil de usar en móviles */
+    .hero-slide {
+        background-attachment: scroll; /* Mejor rendimiento en móviles */
+    }
 }
 
 /* LANDSCAPE ORIENTATION */
@@ -588,6 +669,17 @@
     .section {
         padding: 50px 0;
     }
+    
+    /* Carrusel en landscape */
+    .carousel-indicators {
+        bottom: 15px;
+    }
+    
+    .carousel-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
 }
 
 /* PRINT STYLES */
@@ -595,13 +687,20 @@
     .header,
     .menu-toggle,
     .back-to-top,
-    .btn {
+    .btn,
+    .carousel-nav,
+    .carousel-indicators {
         display: none !important;
     }
     
     .hero {
         height: auto;
         padding: 20px 0;
+        background: none !important;
+    }
+    
+    .hero-slide {
+        display: none;
     }
     
     .section {
@@ -637,6 +736,15 @@
     .achievement-card {
         border: 2px solid var(--primary);
     }
+    
+    .carousel-nav {
+        border-width: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .indicator {
+        border-width: 3px;
+    }
 }
 
 /* REDUCED MOTION */
@@ -651,12 +759,82 @@
     }
     
     .hero-slide {
-        transition: none;
+        transition: none !important;
+    }
+    
+    .carousel-nav,
+    .indicator {
+        transition: none !important;
     }
     
     .scroll-reveal {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+}
+
+/* ===================================
+   CARRUSEL - MEJORAS ESPECÍFICAS MOBILE
+   ================================= */
+
+/* Optimización para touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .carousel-nav {
+        /* Hacer los botones más grandes para touch */
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .indicator {
+        /* Hacer los indicadores más grandes para touch */
+        width: 16px;
+        height: 16px;
+        margin: 0 8px;
+    }
+    
+    /* Mejorar el área de toque */
+    .carousel-nav::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+    }
+    
+    .indicator::before {
+        content: '';
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: -8px;
+        bottom: -8px;
+    }
+}
+
+/* Optimización para dispositivos con pantallas de alta densidad */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-slide {
+        background-size: cover;
+        background-position: center;
+        /* Usar imágenes de mayor resolución si están disponibles */
+    }
+}
+
+/* Mejoras de rendimiento para móviles */
+@media (max-width: 768px) {
+    .hero-slide {
+        /* Optimización de rendimiento */
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        perspective: 1000;
+    }
+    
+    .carousel-nav,
+    .indicator {
+        /* Usar GPU para mejor rendimiento */
+        transform: translateZ(0);
     }
 }

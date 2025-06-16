@@ -1,5 +1,5 @@
 /**
- * GRUPO SEAL - MAIN.JS CORREGIDO
+ * GRUPO SEAL - MAIN.JS COMPLETO CORREGIDO
  * JavaScript principal con carrusel y menú funcional
  */
 
@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.GrupoSealApp) {
         const app = new window.GrupoSealApp();
         app.init();
+        
+        // Inicializar carrusel después de la app
+        setTimeout(() => {
+            initializeHeroCarousel();
+        }, 200);
         return;
     }
 
@@ -68,7 +73,7 @@ function initializeHeroCarousel() {
     let currentSlide = 0;
     let slideInterval = null;
     let isPaused = false;
-    const autoplayDelay = 4000; // 4 segundos - más rápido para testing
+    const autoplayDelay = 4000; // 4 segundos
     
     console.log(`📸 Slides encontradas: ${slides.length}`);
     console.log(`📍 Indicadores encontrados: ${indicators.length}`);
@@ -118,6 +123,14 @@ function initializeHeroCarousel() {
         
         // Log para debugging
         console.log(`✅ Slide activa: ${currentSlide + 1}`);
+        
+        // Track analytics si está disponible
+        if (window.GrupoSealHelpers && window.GrupoSealHelpers.analytics) {
+            window.GrupoSealHelpers.analytics.trackEvent('carousel_change', {
+                slide: currentSlide + 1,
+                total: slides.length
+            });
+        }
     }
 
     // Función para ir a la siguiente slide

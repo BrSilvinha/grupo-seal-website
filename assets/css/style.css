@@ -262,10 +262,11 @@ p {
     color: var(--white);
     font-size: 24px;
 }
-
 /* ===================================
-   HERO SECTION CON CARRUSEL CORREGIDO
+   HERO SECTION CON CARRUSEL CORREGIDO - REEMPLAZAR EN STYLE.CSS
    ================================= */
+
+/* HERO PRINCIPAL */
 .hero {
     height: 100vh;
     position: relative;
@@ -333,8 +334,7 @@ p {
     background-image: url('/assets/img/hero/GrupoSealLogoBig2.webp');
 }
 
-/* Si las imágenes no existen, usa estas temporales */
-/*
+/* Si las imágenes no cargan, descomenta estas para usar temporales:
 .hero-slide-1 {
     background-image: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1926&q=80');
 }
@@ -449,6 +449,133 @@ p {
 
 .carousel-next {
     right: 30px;
+}
+
+/* RESPONSIVE PARA CARRUSEL */
+@media (max-width: 768px) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 120px 0 80px;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 200px;
+        text-align: center;
+    }
+    
+    .carousel-nav {
+        width: 45px;
+        height: 45px;
+        font-size: 16px;
+    }
+    
+    .carousel-prev {
+        left: 15px;
+    }
+    
+    .carousel-next {
+        right: 15px;
+    }
+    
+    .indicator {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 80vh;
+        padding: 100px 0 60px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .carousel-nav {
+        display: none;
+    }
+    
+    .carousel-indicators {
+        bottom: 20px;
+    }
+}
+
+/* LANDSCAPE ORIENTATION */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding: 80px 0 40px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+}
+
+/* PREFERS REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide {
+        transition: opacity 0.1s ease !important;
+    }
+    
+    .indicator,
+    .carousel-nav {
+        transition: none !important;
+    }
+}
+
+/* PRINT STYLES */
+@media print {
+    .carousel-indicators,
+    .carousel-nav {
+        display: none !important;
+    }
+    
+    .hero {
+        height: auto;
+        padding: 20px 0;
+    }
+    
+    .hero-slide {
+        opacity: 1 !important;
+        position: relative !important;
+    }
+}
+
+/* HIGH CONTRAST MODE */
+@media (prefers-contrast: high) {
+    .carousel-nav {
+        border-width: 3px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .indicator {
+        border-width: 3px;
+    }
+    
+    .indicator.active {
+        border-width: 4px;
+    }
 }
 
 /* ABOUT SECTION */
