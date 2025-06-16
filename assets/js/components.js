@@ -1,6 +1,6 @@
 /**
- * GRUPO SEAL - COMPONENTES JAVASCRIPT
- * Funciones modulares y reutilizables
+ * GRUPO SEAL - COMPONENTES JAVASCRIPT CORREGIDOS
+ * Funciones modulares y reutilizables (sin conflictos de carrusel)
  */
 
 // Usar utilidades globales si están disponibles
@@ -237,221 +237,6 @@ const Header = {
                 link.setAttribute('tabindex', index === 0 ? '0' : '-1');
             });
         }
-    }
-};
-
-// ===================================
-// COMPONENTE: CARRUSEL HERO
-// ===================================
-const HeroCarousel = {
-    init() {
-        ComponentUtils.log.info('Inicializando HeroCarousel...');
-        this.slides = document.querySelectorAll('.hero-slide');
-        this.currentSlide = 0;
-        this.isPlaying = true;
-        this.intervalId = null;
-        this.isPaused = false;
-
-        if (this.slides.length <= 1) {
-            ComponentUtils.log.info('Solo una slide, carrusel deshabilitado');
-            return;
-        }
-
-        this.setupCarousel();
-        this.startAutoplay();
-        this.setupVisibilityChange();
-        this.setupUserInteraction();
-    },
-
-    setupCarousel() {
-        // Asegurar que solo la primera slide esté activa
-        this.slides.forEach((slide, index) => {
-            slide.classList.toggle('active', index === 0);
-            slide.setAttribute('aria-hidden', index !== 0);
-        });
-
-        // Precargar imágenes
-        this.preloadImages();
-    },
-
-    preloadImages() {
-        this.slides.forEach(slide => {
-            const bgImage = window.getComputedStyle(slide).backgroundImage;
-            if (bgImage && bgImage !== 'none') {
-                const imageUrl = bgImage.slice(4, -1).replace(/"/g, "");
-                const img = new Image();
-                img.src = imageUrl;
-            }
-        });
-    },
-
-    nextSlide() {
-        if (this.slides.length === 0) return;
-
-        const prevSlide = this.currentSlide;
-        this.slides[this.currentSlide].classList.remove('active');
-        this.slides[this.currentSlide].setAttribute('aria-hidden', 'true');
-        
-        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-        
-        this.slides[this.currentSlide].classList.add('active');
-        this.slides[this.currentSlide].setAttribute('aria-hidden', 'false');
-
-        // Callback para analytics
-        if (window.GrupoSealHelpers) {
-            window.GrupoSealHelpers.analytics.trackEvent('carousel_slide', {
-                from: prevSlide,
-                to: this.currentSlide,
-                auto: !this.isPaused
-            });
-        }
-    },
-
-    prevSlide() {
-        if (this.slides.length === 0) return;
-
-        this.slides[this.currentSlide].classList.remove('active');
-        this.slides[this.currentSlide].setAttribute('aria-hidden', 'true');
-        
-        this.currentSlide = this.currentSlide === 0 
-            ? this.slides.length - 1 
-            : this.currentSlide - 1;
-        
-        this.slides[this.currentSlide].classList.add('active');
-        this.slides[this.currentSlide].setAttribute('aria-hidden', 'false');
-    },
-
-    goToSlide(index) {
-        if (index < 0 || index >= this.slides.length) return;
-
-        this.slides[this.currentSlide].classList.remove('active');
-        this.slides[this.currentSlide].setAttribute('aria-hidden', 'true');
-        
-        this.currentSlide = index;
-        
-        this.slides[this.currentSlide].classList.add('active');
-        this.slides[this.currentSlide].setAttribute('aria-hidden', 'false');
-    },
-
-    startAutoplay() {
-        if (this.intervalId) return;
-        
-        this.intervalId = setInterval(() => {
-            if (!this.isPaused) {
-                this.nextSlide();
-            }
-        }, CONFIG.carousel.autoplaySpeed);
-        
-        this.isPlaying = true;
-    },
-
-    stopAutoplay() {
-        if (this.intervalId) {
-            clearInterval(this.intervalId);
-            this.intervalId = null;
-        }
-        this.isPlaying = false;
-    },
-
-    pauseAutoplay() {
-        this.isPaused = true;
-    },
-
-    resumeAutoplay() {
-        this.isPaused = false;
-    },
-
-    setupVisibilityChange() {
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                this.pauseAutoplay();
-            } else {
-                this.resumeAutoplay();
-            }
-        });
-
-        // Pausar cuando se pierde el foco de la ventana
-        window.addEventListener('blur', () => this.pauseAutoplay());
-        window.addEventListener('focus', () => this.resumeAutoplay());
-    },
-
-    setupUserInteraction() {
-        const heroSection = document.querySelector('.hero');
-        if (!heroSection) return;
-
-        // Pausar en hover
-        heroSection.addEventListener('mouseenter', () => this.pauseAutoplay());
-        heroSection.addEventListener('mouseleave', () => this.resumeAutoplay());
-
-        // Controles de teclado
-        heroSection.addEventListener('keydown', (e) => {
-            switch(e.key) {
-                case 'ArrowLeft':
-                    e.preventDefault();
-                    this.pauseAutoplay();
-                    this.prevSlide();
-                    break;
-                case 'ArrowRight':
-                    e.preventDefault();
-                    this.pauseAutoplay();
-                    this.nextSlide();
-                    break;
-                case ' ':
-                    e.preventDefault();
-                    if (this.isPaused) {
-                        this.resumeAutoplay();
-                    } else {
-                        this.pauseAutoplay();
-                    }
-                    break;
-            }
-        });
-
-        // Touch/swipe support
-        this.setupTouchControls(heroSection);
-    },
-
-    setupTouchControls(element) {
-        let startX = 0;
-        let startY = 0;
-        let endX = 0;
-        let endY = 0;
-
-        element.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-            startY = e.touches[0].clientY;
-        }, { passive: true });
-
-        element.addEventListener('touchend', (e) => {
-            endX = e.changedTouches[0].clientX;
-            endY = e.changedTouches[0].clientY;
-            this.handleSwipe(startX, startY, endX, endY);
-        }, { passive: true });
-    },
-
-    handleSwipe(startX, startY, endX, endY) {
-        const deltaX = endX - startX;
-        const deltaY = endY - startY;
-        const minSwipeDistance = 50;
-
-        // Solo procesar swipes horizontales
-        if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > minSwipeDistance) {
-            this.pauseAutoplay();
-            
-            if (deltaX > 0) {
-                this.prevSlide(); // Swipe right
-            } else {
-                this.nextSlide(); // Swipe left
-            }
-        }
-    },
-
-    destroy() {
-        this.stopAutoplay();
-        this.slides.forEach(slide => {
-            slide.classList.remove('active');
-            slide.removeAttribute('aria-hidden');
-        });
     }
 };
 
@@ -1124,9 +909,9 @@ const Performance = {
 
     preloadCriticalResources() {
         const criticalResources = [
-            '/assets/img/hero/slide-1.webp',
-            '/assets/img/hero/slide-2.webp',
-            '/assets/img/icons/logo-white.webp'
+            '/assets/img/hero/GrupoSealLogoBig.webp',
+            '/assets/img/hero/GrupoSealLogoBig2.webp',
+            '/assets/img/icons/Logo-white.webp'
         ];
 
         criticalResources.forEach(src => {
@@ -1170,276 +955,19 @@ const Performance = {
 };
 
 // ===================================
-// COMPONENTE: ACCESSIBILITY
-// ===================================
-const Accessibility = {
-    init() {
-        ComponentUtils.log.info('Inicializando Accessibility...');
-        this.setupKeyboardNavigation();
-        this.setupFocusManagement();
-        this.setupARIAAttributes();
-        this.setupReducedMotion();
-        this.setupScreenReaderSupport();
-    },
-
-    setupKeyboardNavigation() {
-        // Navegación con Tab
-        this.setupTabNavigation();
-        
-        // Navegación con teclas de flecha
-        this.setupArrowNavigation();
-        
-        // Escape para cerrar elementos
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                this.handleEscapeKey();
-            }
-        });
-    },
-
-    setupTabNavigation() {
-        const focusableElements = document.querySelectorAll(
-            'a, button, input, textarea, select, [tabindex]:not([tabindex="-1"])'
-        );
-
-        focusableElements.forEach(element => {
-            element.addEventListener('focus', (e) => {
-                e.target.classList.add('keyboard-focus');
-            });
-
-            element.addEventListener('blur', (e) => {
-                e.target.classList.remove('keyboard-focus');
-            });
-        });
-    },
-
-    setupArrowNavigation() {
-        // Navegación en menús con flechas
-        const navMenus = document.querySelectorAll('.nav-links');
-        
-        navMenus.forEach(menu => {
-            menu.addEventListener('keydown', (e) => {
-                const items = menu.querySelectorAll('a');
-                const currentIndex = Array.from(items).indexOf(document.activeElement);
-                
-                switch(e.key) {
-                    case 'ArrowDown':
-                        e.preventDefault();
-                        const nextIndex = (currentIndex + 1) % items.length;
-                        items[nextIndex].focus();
-                        break;
-                    case 'ArrowUp':
-                        e.preventDefault();
-                        const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
-                        items[prevIndex].focus();
-                        break;
-                }
-            });
-        });
-    },
-
-    handleEscapeKey() {
-        // Cerrar menú móvil
-        const navLinks = document.querySelector('.nav-links.show');
-        if (navLinks) {
-            navLinks.classList.remove('show');
-            const menuToggle = document.querySelector('.menu-toggle');
-            if (menuToggle) menuToggle.focus();
-        }
-
-        // Cerrar modales (si existen)
-        const modals = document.querySelectorAll('.modal.active');
-        modals.forEach(modal => {
-            modal.classList.remove('active');
-        });
-    },
-
-    setupFocusManagement() {
-        // Mejorar indicadores de foco
-        const style = document.createElement('style');
-        style.textContent = `
-            .keyboard-focus {
-                outline: 2px solid var(--primary) !important;
-                outline-offset: 2px !important;
-                box-shadow: 0 0 0 4px rgba(10, 37, 60, 0.2) !important;
-            }
-            
-            /* Ocultar outline para mouse/touch */
-            *:focus:not(.keyboard-focus) {
-                outline: none;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Detectar navegación por teclado vs mouse
-        document.addEventListener('mousedown', () => {
-            document.body.classList.add('using-mouse');
-        });
-
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Tab') {
-                document.body.classList.remove('using-mouse');
-            }
-        });
-    },
-
-    setupARIAAttributes() {
-        // Añadir ARIA labels automáticamente
-        this.addMissingARIALabels();
-        
-        // Configurar landmarks
-        this.setupLandmarks();
-        
-        // Configurar live regions
-        this.setupLiveRegions();
-    },
-
-    addMissingARIALabels() {
-        // Botones sin label
-        const buttons = document.querySelectorAll('button:not([aria-label]):not([aria-labelledby])');
-        buttons.forEach(button => {
-            const text = button.textContent.trim();
-            if (text) {
-                button.setAttribute('aria-label', text);
-            } else {
-                const icon = button.querySelector('i');
-                if (icon && icon.className.includes('fa-')) {
-                    const iconName = icon.className.split('fa-')[1]?.split(' ')[0];
-                    button.setAttribute('aria-label', this.getIconDescription(iconName));
-                }
-            }
-        });
-
-        // Enlaces sin descripción
-        const links = document.querySelectorAll('a:not([aria-label]):not([aria-labelledby])');
-        links.forEach(link => {
-            if (!link.textContent.trim()) {
-                const img = link.querySelector('img');
-                if (img && img.alt) {
-                    link.setAttribute('aria-label', img.alt);
-                }
-            }
-        });
-    },
-
-    getIconDescription(iconName) {
-        const iconMap = {
-            'bars': 'Abrir menú',
-            'times': 'Cerrar menú',
-            'arrow-up': 'Volver arriba',
-            'phone': 'Teléfono',
-            'envelope': 'Email',
-            'map-marker-alt': 'Ubicación'
-        };
-        return iconMap[iconName] || iconName;
-    },
-
-    setupLandmarks() {
-        // Asegurar landmarks apropiados
-        const header = document.querySelector('header:not([role])');
-        if (header) header.setAttribute('role', 'banner');
-
-        const nav = document.querySelector('nav:not([role])');
-        if (nav) nav.setAttribute('role', 'navigation');
-
-        const main = document.querySelector('main:not([role])');
-        if (main) main.setAttribute('role', 'main');
-
-        const footer = document.querySelector('footer:not([role])');
-        if (footer) footer.setAttribute('role', 'contentinfo');
-    },
-
-    setupLiveRegions() {
-        // Crear región para anuncios dinámicos
-        const announcer = document.createElement('div');
-        announcer.id = 'announcer';
-        announcer.setAttribute('aria-live', 'polite');
-        announcer.setAttribute('aria-atomic', 'true');
-        announcer.style.cssText = `
-            position: absolute;
-            left: -10000px;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-        `;
-        document.body.appendChild(announcer);
-
-        // Función global para anuncios
-        window.announceToScreenReader = (message) => {
-            announcer.textContent = message;
-            setTimeout(() => announcer.textContent = '', 1000);
-        };
-    },
-
-    setupReducedMotion() {
-        // Respetar preferencias de movimiento reducido
-        const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-        
-        const handleReducedMotion = (mq) => {
-            if (mq.matches) {
-                document.body.classList.add('reduce-motion');
-                // Desactivar animaciones automáticas
-                if (window.HeroCarousel && window.HeroCarousel.stopAutoplay) {
-                    window.HeroCarousel.stopAutoplay();
-                }
-            } else {
-                document.body.classList.remove('reduce-motion');
-            }
-        };
-
-        handleReducedMotion(mediaQuery);
-        mediaQuery.addListener(handleReducedMotion);
-    },
-
-    setupScreenReaderSupport() {
-        // Añadir texto para lectores de pantalla
-        const srOnlyStyle = document.createElement('style');
-        srOnlyStyle.textContent = `
-            .sr-only {
-                position: absolute !important;
-                width: 1px !important;
-                height: 1px !important;
-                padding: 0 !important;
-                margin: -1px !important;
-                overflow: hidden !important;
-                clip: rect(0, 0, 0, 0) !important;
-                border: 0 !important;
-            }
-        `;
-        document.head.appendChild(srOnlyStyle);
-
-        // Añadir contexto a enlaces genéricos
-        const genericLinks = document.querySelectorAll('a[href]:not([aria-label])');
-        genericLinks.forEach(link => {
-            const text = link.textContent.trim().toLowerCase();
-            if (['ver más', 'leer más', 'más información'].includes(text)) {
-                const section = link.closest('section, article');
-                if (section) {
-                    const heading = section.querySelector('h1, h2, h3, h4, h5, h6');
-                    if (heading) {
-                        link.setAttribute('aria-label', `${text} sobre ${heading.textContent.trim()}`);
-                    }
-                }
-            }
-        });
-    }
-};
-
-// ===================================
-// INICIALIZACIÓN PRINCIPAL
+// INICIALIZACIÓN PRINCIPAL (SIN CARRUSEL)
 // ===================================
 class GrupoSealApp {
     constructor() {
+        // NOTA: HeroCarousel REMOVIDO para evitar conflictos
         this.components = [
             Header,
-            HeroCarousel,
             ScrollAnimations,
             BackToTop,
             SmoothScrollLinks,
             InteractiveCards,
             Forms,
-            Performance,
-            Accessibility
+            Performance
         ];
         
         this.initialized = false;
@@ -1611,26 +1139,32 @@ class GrupoSealApp {
 window.GrupoSealApp = GrupoSealApp;
 window.GrupoSealComponents = {
     Header,
-    HeroCarousel,
     ScrollAnimations,
     BackToTop,
     SmoothScrollLinks,
     InteractiveCards,
     Forms,
-    Performance,
-    Accessibility
+    Performance
 };
 
 // ===================================
-// AUTO-INICIALIZACIÓN
+// AUTO-INICIALIZACIÓN (CONDICIONAL)
 // ===================================
-// Solo auto-inicializar si no se está usando como módulo
-if (typeof module === 'undefined') {
-    const app = new GrupoSealApp();
-    app.init();
+// Solo auto-inicializar si no se está usando como módulo Y si main.js no ha inicializado ya
+if (typeof module === 'undefined' && !window.mainJsLoaded) {
+    ComponentUtils.log.info('📦 Components.js: Esperando a main.js...');
     
-    // Hacer la instancia disponible globalmente
-    window.grupoSealAppInstance = app;
+    // Dar prioridad a main.js
+    setTimeout(() => {
+        if (!window.mainJsLoaded) {
+            ComponentUtils.log.info('📦 Components.js: Inicializando como fallback...');
+            const app = new GrupoSealApp();
+            app.init();
+            
+            // Hacer la instancia disponible globalmente
+            window.grupoSealAppInstance = app;
+        }
+    }, 100);
 }
 
 // ===================================
@@ -1654,4 +1188,4 @@ if (window.location.hostname === 'localhost' || window.location.hostname === '12
     ComponentUtils.log.info('📝 Usa debugGrupoSeal() para ver información de debug');
 }
 
-ComponentUtils.log.success('📦 Components.js cargado correctamente');
+ComponentUtils.log.success('📦 Components.js cargado correctamente (sin carrusel)');

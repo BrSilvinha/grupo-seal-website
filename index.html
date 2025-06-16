@@ -43,11 +43,13 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section con Carrusel CORREGIDO -->
     <section id="inicio" class="hero">
-        <!-- Slides del carrusel -->
-        <div class="hero-slide hero-slide-1 active"></div>
-        <div class="hero-slide hero-slide-2"></div>
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
         
         <!-- Contenido del hero -->
         <div class="container hero-content">
@@ -57,6 +59,20 @@
                 <a href="servicios/index.html" class="btn btn-primary">Nuestros Servicios</a>
                 <a href="contacto/index.html" class="btn btn-secondary">Contáctanos</a>
             </div>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación (opcional) -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
     </section>
 
@@ -187,7 +203,6 @@
                 </div>
                 <p>Autorización para brindar servicios de vigilancia privada con armas de fuego en Lambayeque.</p>
                 <p>Vigencia: hasta el 21 de Mayo de 2029</p>
-                <!-- Agregar z-index y position relative al enlace -->
                 <a href="nosotros/certificaciones.html" class="btn" style="position: relative; z-index: 5;">Ver certificaciones</a>
             </div>
         </div>
