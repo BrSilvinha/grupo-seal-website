@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuestra Historia - Grupo SEAL S.A.C.</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/img/Logo-white.webp" alt="Logo Grupo SEAL">
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -38,20 +38,34 @@
 
     <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-                <h1 class="fade-in">Nuestra Historia</h1>
-                <p class="fade-in delay-1">Más de 12 años de trayectoria brindando soluciones de seguridad confiables e innovadoras.</p>
-                <div class="fade-in delay-2">
-                    <a href="#history-section" class="btn btn-primary">Conocer más</a>
-                    <a href="certificaciones.html" class="btn">Certificaciones</a>
-                </div>
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
+        <div class="container hero-content">
+            <h1 class="fade-in">Nuestra Historia</h1>
+            <p class="fade-in delay-1">Más de 12 años de trayectoria brindando soluciones de seguridad confiables e innovadoras.</p>
+            <div class="fade-in delay-2">
+                <a href="#history-section" class="btn btn-primary">Conocer más</a>
+                <a href="certificaciones.html" class="btn">Certificaciones</a>
             </div>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
     </section>
 
@@ -181,7 +195,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL Logo">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL Logo">
                     </div>
                     <p>Protegemos lo que más importa con soluciones de seguridad personalizadas y un equipo altamente capacitado.</p>
                 </div>
@@ -248,6 +262,8 @@
     </a>
 
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

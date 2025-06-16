@@ -4,20 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Misión y Visión - Grupo SEAL S.A.C.</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
 </head>
 <body>
     <!-- Header -->
     <header class="header">
         <div class="header-inner">
             <div class="logo">
-                <img src="/assets/img/Logo-white.webp" alt="Logo Grupo SEAL">
-                
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
             </div>
             <nav>
                 <ul class="nav-links">
@@ -37,113 +36,131 @@
         </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
         <div class="container hero-content">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-                <h1>Misión y Visión</h1>
-                <p>Nuestros objetivos y valores que guían nuestro compromiso con la excelencia en seguridad.</p>
-                <div>
-                    <a href="#mission-vision-section" class="btn btn-primary">Conocer más</a>
-                    <a href="../servicios/index.html" class="btn">Nuestros Servicios</a>
+            <h1>Misión y Visión</h1>
+            <p>Nuestros objetivos y valores que guían nuestro compromiso con la excelencia en seguridad.</p>
+            <div>
+                <a href="#mission-vision-section" class="btn btn-primary">Conocer más</a>
+                <a href="../servicios/index.html" class="btn">Nuestros Servicios</a>
+            </div>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+    </section>
+
+    <!-- Mission & Vision Section -->
+    <section id="mission-vision-section" class="section mission-vision">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="fade-in">Nuestra Misión y Visión</h2>
+            </div>
+            
+            <div class="row">
+                <div class="col-2">
+                    <div class="service-card fade-in-left scroll-animation">
+                        <div class="service-content text-center">
+                            <div class="pillar-icon pulse">
+                                <i class="fas fa-bullseye"></i>
+                            </div>
+                            <h3>Misión</h3>
+                            <p>Proteger vidas y propiedades con soluciones integrales de seguridad que generan confianza y seguridad, respaldadas por un equipo comprometido y con gran capacidad.</p>
+                            <div class="cert-icon" style="background-color: var(--secondary); width: 50px; height: 50px; opacity: 0.2;">
+                                <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 24px;"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                
+                <div class="col-2">
+                    <div class="service-card fade-in-right scroll-animation delay-1">
+                        <div class="service-content text-center">
+                            <div class="pillar-icon pulse">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <h3>Visión</h3>
+                            <p>Ser una compañía confiable y líder en el amplio campo de la seguridad privada destacada por su solidez, compromiso y un excelente potencial humano.</p>
+                            <div class="cert-icon" style="background-color: var(--secondary); width: 50px; height: 50px; opacity: 0.2;">
+                                <i class="fas fa-rocket" style="color: var(--primary); font-size: 24px;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Línea divisoria con estilo -->
+            <div class="text-center mt-4">
+                <div style="width: 150px; height: 3px; background-color: var(--primary); margin: 40px auto; position: relative;" class="scale-up scroll-animation">
+                    <div style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);"></div>
+                </div>
+            </div>
+            
+            <!-- Añadimos una frase inspiradora -->
+            <div class="cert-box scale-up scroll-animation">
+                <div class="cert-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Nuestro Compromiso</h3>
+                <p>En Grupo SEAL S.A.C. estamos dedicados a ofrecer seguridad de primer nivel, adaptada a las necesidades de cada cliente. Nuestra filosofía se basa en la integridad, el profesionalismo y la excelencia en todo lo que hacemos.</p>
             </div>
         </div>
     </section>
 
-<!-- Mission & Vision Section -->
-<section id="mission-vision-section" class="section mission-vision">
-    <div class="container">
-        <div class="section-title">
-            <h2 class="fade-in">Nuestra Misión y Visión</h2>
-        </div>
-        
-        <div class="row">
-            <div class="col-2">
-                <div class="service-card fade-in-left scroll-animation">
-                    <div class="service-content text-center">
-                        <div class="pillar-icon pulse">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-                        <h3>Misión</h3>
-                        <p>Proteger vidas y propiedades con soluciones integrales de seguridad que generan confianza y seguridad, respaldadas por un equipo comprometido y con gran capacidad.</p>
-                        <div class="cert-icon" style="background-color: var(--secondary); width: 50px; height: 50px; opacity: 0.2;">
-                            <i class="fas fa-shield-alt" style="color: var(--primary); font-size: 24px;"></i>
-                        </div>
+    <!-- Pillars Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Pilares Organizacionales</h2>
+            </div>
+            <p class="text-center">Nuestros pilares fundamentales son la base sobre la cual construimos cada una de nuestras acciones y decisiones.</p>
+            
+            <div class="pillars-container">
+                <div class="pillar-box">
+                    <div class="pillar-icon icon-hover">
+                        <i class="fas fa-users"></i>
                     </div>
+                    <h3>Unidad</h3>
+                    <p>Trabajamos de manera colaborativa, fomentando el trabajo en equipo entre nuestros colaboradores y clientes. Sabemos que proteger lo que más valoras requiere esfuerzo conjunto, compromiso y una comunicación constante que asegure cada detalle de nuestra operación.</p>
                 </div>
-            </div>
-            
-            <div class="col-2">
-                <div class="service-card fade-in-right scroll-animation delay-1">
-                    <div class="service-content text-center">
-                        <div class="pillar-icon pulse">
-                            <i class="fas fa-eye"></i>
-                        </div>
-                        <h3>Visión</h3>
-                        <p>Ser una compañía confiable y líder en el amplio campo de la seguridad privada destacada por su solidez, compromiso y un excelente potencial humano.</p>
-                        <div class="cert-icon" style="background-color: var(--secondary); width: 50px; height: 50px; opacity: 0.2;">
-                            <i class="fas fa-rocket" style="color: var(--primary); font-size: 24px;"></i>
-                        </div>
+                
+                <div class="pillar-box">
+                    <div class="pillar-icon icon-hover">
+                        <i class="fas fa-fist-raised"></i>
                     </div>
+                    <h3>Firmeza</h3>
+                    <p>La firmeza en nuestras decisiones y acciones es lo que nos permite garantizar un servicio confiable y eficiente. Actuamos con determinación y coherencia en cada situación. En un entorno donde la seguridad es vital, nuestra firmeza nos permite reaccionar de manera rápida y precisa.</p>
+                </div>
+                
+                <div class="pillar-box">
+                    <div class="pillar-icon icon-hover">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Profesionalismo</h3>
+                    <p>El profesionalismo es nuestro sello distintivo. Nos caracterizamos por ofrecer un servicio personalizado, adaptado a las necesidades específicas de cada cliente, siempre manteniendo los más altos estándares de calidad. Cada miembro de nuestro equipo está altamente capacitado y comprometido con la excelencia.</p>
                 </div>
             </div>
         </div>
-        <!-- Línea divisoria con estilo -->
-        <div class="text-center mt-4">
-            <div style="width: 150px; height: 3px; background-color: var(--primary); margin: 40px auto; position: relative;" class="scale-up scroll-animation">
-                <div style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; position: absolute; top: -6px; left: 50%; transform: translateX(-50%);"></div>
-            </div>
-        </div>
-        <!-- Añadimos una frase inspiradora -->
-        <div class="cert-box scale-up scroll-animation">
-            <div class="cert-icon">
-                <i class="fas fa-star"></i>
-            </div>
-            <h3>Nuestro Compromiso</h3>
-            <p>En Grupo SEAL S.A.C. estamos dedicados a ofrecer seguridad de primer nivel, adaptada a las necesidades de cada cliente. Nuestra filosofía se basa en la integridad, el profesionalismo y la excelencia en todo lo que hacemos.</p>
-        </div>
-    </div>
-<!-- Pillars Section -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Nuestros Pilares Organizacionales</h2>
-        </div>
-        <p class="text-center">Nuestros pilares fundamentales son la base sobre la cual construimos cada una de nuestras acciones y decisiones.</p>
-        
-        <div class="pillars-container">
-            <div class="pillar-box">
-                <div class="pillar-icon icon-hover">
-                    <i class="fas fa-users"></i>
-                </div>
-                <h3>Unidad</h3>
-                <p>Trabajamos de manera colaborativa, fomentando el trabajo en equipo entre nuestros colaboradores y clientes. Sabemos que proteger lo que más valoras requiere esfuerzo conjunto, compromiso y una comunicación constante que asegure cada detalle de nuestra operación.</p>
-            </div>
-            
-            <div class="pillar-box">
-                <div class="pillar-icon icon-hover">
-                    <i class="fas fa-fist-raised"></i>
-                </div>
-                <h3>Firmeza</h3>
-                <p>La firmeza en nuestras decisiones y acciones es lo que nos permite garantizar un servicio confiable y eficiente. Actuamos con determinación y coherencia en cada situación. En un entorno donde la seguridad es vital, nuestra firmeza nos permite reaccionar de manera rápida y precisa.</p>
-            </div>
-            
-            <div class="pillar-box">
-                <div class="pillar-icon icon-hover">
-                    <i class="fas fa-briefcase"></i>
-                </div>
-                <h3>Profesionalismo</h3>
-                <p>El profesionalismo es nuestro sello distintivo. Nos caracterizamos por ofrecer un servicio personalizado, adaptado a las necesidades específicas de cada cliente, siempre manteniendo los más altos estándares de calidad. Cada miembro de nuestro equipo está altamente capacitado y comprometido con la excelencia.</p>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -151,7 +168,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL Logo">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL Logo">
                     </div>
                     <p>Protegemos lo que más importa con soluciones de seguridad personalizadas y un equipo altamente capacitado.</p>
                 </div>
@@ -218,6 +235,8 @@
     </a>
 
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>

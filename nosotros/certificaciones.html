@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Certificaciones - Grupo SEAL S.A.C.</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-   <link rel="icon" href="../assets/img/LogoWeb.webp">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/icons/LogoWeb.webp">
     <style>
         /* Estilos adicionales específicos para certificaciones */
         .certification-details {
@@ -101,47 +101,60 @@
     </style>
 </head>
 <body>
-     <!-- Header -->
-     <header class="header">
-            <div class="header-inner">
-                <div class="logo">
-                    <img src="/assets/img/Logo-white.webp" alt="Logo Grupo SEAL">
-                    
-                </div>
-                <nav>
-                    <ul class="nav-links">
-                        <li><a href="../index.html">Inicio</a></li>
-                        <li><a href="../nosotros/index.html">Nosotros</a></li>
-                        <li><a href="../servicios/index.html">Servicios</a></li>
-                        <li><a href="../personal/index.html">Personal</a></li>
-                        <li><a href="../clientes/index.html">Clientes</a></li>
-                        <li><a href="../contacto/index.html">Contacto</a></li>
-                        <li><a href="../contacto/sucursales.html">Sucursales</a></li>
-                        <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
-                    </ul>
-                </nav>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="../assets/img/icons/Logo-white.webp" alt="Logo Grupo SEAL">
             </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="../nosotros/index.html">Nosotros</a></li>
+                    <li><a href="../servicios/index.html">Servicios</a></li>
+                    <li><a href="../personal/index.html">Personal</a></li>
+                    <li><a href="../clientes/index.html">Clientes</a></li>
+                    <li><a href="../contacto/index.html">Contacto</a></li>
+                    <li><a href="../contacto/sucursales.html">Sucursales</a></li>
+                    <li><a href="../contacto/trabaja.html">Trabaja con Nosotros</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
     </header>
 
-    <!-- hero Section -->
+    <!-- Hero Section -->
     <section id="inicio" class="hero">
-        <div class="container">
-                <!-- Slides del carrusel -->
-    <div class="hero-slide hero-slide-1 active"></div>
-    <div class="hero-slide hero-slide-2"></div>
-    
-    <!-- Contenido del hero (se mantiene igual) -->
-    <div class="container hero-content">
-                <h1 class="fade-in-up">Nuestras Certificaciones</h1>
-                <p class="fade-in-up delay-1">Garantizamos la calidad y legalidad de nuestros servicios con todas las autorizaciones y certificaciones requeridas.</p>
-                <div class="fade-in-up delay-2">
-                    <a href="#certifications-section" class="btn btn-primary">Conocer más</a>
-                    <a href="historia.html" class="btn">Nuestra Historia</a>
-                </div>
+        <!-- Contenedor de slides -->
+        <div class="hero-slides">
+            <div class="hero-slide hero-slide-1 active"></div>
+            <div class="hero-slide hero-slide-2"></div>
+        </div>
+        
+        <!-- Contenido del hero -->
+        <div class="container hero-content">
+            <h1 class="fade-in-up">Nuestras Certificaciones</h1>
+            <p class="fade-in-up delay-1">Garantizamos la calidad y legalidad de nuestros servicios con todas las autorizaciones y certificaciones requeridas.</p>
+            <div class="fade-in-up delay-2">
+                <a href="#certifications-section" class="btn btn-primary">Conocer más</a>
+                <a href="historia.html" class="btn">Nuestra Historia</a>
             </div>
+        </div>
+
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <div class="indicator active" data-slide="0"></div>
+            <div class="indicator" data-slide="1"></div>
+        </div>
+
+        <!-- Controles de navegación -->
+        <div class="carousel-nav carousel-prev">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="carousel-nav carousel-next">
+            <i class="fas fa-chevron-right"></i>
         </div>
     </section>
 
@@ -204,7 +217,7 @@
             
             <div class="about-content">
                 <div class="about-image scroll-animation-left">
-                    <img src="../assets/img/GrupoSeal.webp" alt="Cumplimiento Legal">
+                    <img src="../assets/img/team/GrupoSeal.webp" alt="Cumplimiento Legal">
                 </div>
                 <div class="about-text scroll-animation-right">
                     <p>En GRUPO SEAL S.A.C. no solo cumplimos con todas las normativas y requisitos legales exigidos por SUCAMEC, sino que vamos más allá para garantizar un servicio de excelencia y totalmente transparente.</p>
@@ -232,7 +245,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <img src="../assets/img/Logo-white.webp" alt="Grupo SEAL Logo">
+                        <img src="../assets/img/icons/Logo-white.webp" alt="Grupo SEAL Logo">
                     </div>
                     <p>Protegemos lo que más importa con soluciones de seguridad personalizadas y un equipo altamente capacitado.</p>
                 </div>
@@ -297,51 +310,10 @@
     <a href="#" class="back-to-top" id="backToTop">
         <i class="fas fa-arrow-up"></i>
     </a>
+    
     <!-- Scripts -->
-    <script src="../js/main.js"></script>
-    <script src="../js/menu.js"></script>
-    <script>
-        // Función para activar las animaciones al hacer scroll
-        document.addEventListener('DOMContentLoaded', function() {
-            // Mostrar el botón "back to top" al hacer scroll
-            const backToTopButton = document.getElementById('backToTop');
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 300) {
-                    backToTopButton.classList.add('show');
-                } else {
-                    backToTopButton.classList.remove('show');
-                }
-            });
-            
-            // Hacer que el botón "back to top" funcione
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-            
-            // Activar las animaciones al hacer scroll
-            const scrollAnimations = document.querySelectorAll('.scroll-animation, .scroll-animation-left, .scroll-animation-right, .scale-up');
-            
-            const checkScroll = function() {
-                scrollAnimations.forEach(animation => {
-                    const rect = animation.getBoundingClientRect();
-                    const windowHeight = window.innerHeight;
-                    
-                    if (rect.top <= windowHeight * 0.85) {
-                        animation.classList.add('show');
-                    }
-                });
-            };
-            
-            // Verificar al cargar la página
-            checkScroll();
-            
-            // Verificar al hacer scroll
-            window.addEventListener('scroll', checkScroll);
-        });
-    </script>
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/components.js"></script>
+    <script src="../assets/js/main.js"></script>
 </body>
 </html>
